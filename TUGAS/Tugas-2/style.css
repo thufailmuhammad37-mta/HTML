@@ -1,0 +1,131 @@
+body {
+  font-family: Arial, sans-serif; /* Font utama seluruh halaman */
+  line-height: 1.6; /* Spasi antar baris agar enak dibaca */
+  background: #f9fafb; /* Warna latar belakang abu */
+  margin: 20px; /* Jarak isi dengan tepi browser */
+  color: #333; /* Warna teks biasa */
+}
+
+.logo-container {
+  text-align: center; /* Posisikan logo di tengah */
+  margin-bottom: 20px; /* Tambahkan jarak bawah supaya tidak menempel */
+}
+
+.container {
+  max-width: 500px; /* Lebar maksimal agar konten tidak terlalu lebar */
+  margin: auto; /* Posisi tengah (horizontal) */
+}
+
+.main-title {
+  margin: 18px 0 6px; /* Jarak atas & bawah */
+  text-align: center; /* Posisi tengah */
+  font-size: 2.1rem; /* Ukuran font besar */
+  line-height: 1.1; /* Spasi antar baris rapat */
+  font-weight: 700; /* Tebal */
+  color: #1e40af; /* Biru tua */
+  letter-spacing: -0.5px; /* Huruf agak rapat */
+}
+
+.subtitle {
+  margin: 0 0 10px; /* Jarak bawah kecil */
+  text-align: center; /* Posisi tengah */
+  font-size: 1rem; /* Lebih kecil dari judul */
+  line-height: 1.4; /* Spasi agak lega */
+  font-weight: 500; /* Medium tebal */
+  color: #6b7280; /* Abu kebiruan */
+  opacity: 0.95; /* Sedikit transparan */
+}
+
+/* Responsif (untuk layar kecil, misalnya HP) */
+@media (max-width: 480px) {
+  .main-title {
+    font-size: 1.5rem; /* Kecilkan ukuran judul */
+    margin-top: 12px;
+    margin-bottom: 6px;
+  }
+  .subtitle {
+    font-size: 0.95rem; /* Kecilkan subjudul */
+  }
+}
+
+hr {
+  border: none; /* Hilangkan garis default */
+  height: 1px; /* Tebal garis */
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    /* transparan kiri */ rgba(0, 0, 0, 0.06),
+    /* abu tipis di tengah */ rgba(0, 0, 0, 0) /* transparan kanan */
+  );
+  margin: 18px auto; /* Jarak atas bawah + tengah horizontal */
+  max-width: 900px; /* Panjang garis maksimal */
+}
+
+hr.hr-strong {
+  height: 2px;
+  background: #e5e7eb; /* Abu solid */
+  max-width: 700px;
+}
+
+.page-header {
+  padding-top: 28px; /* Jarak atas */
+  padding-bottom: 6px; /* Jarak bawah */
+}
+
+.logo + .main-title {
+  margin-top: 8px; /* Tambah jarak jika logo ada di atas judul */
+}
+
+.center {
+  text-align: center; /* Class serbaguna untuk teks tengah */
+}
+
+.box {
+  background: #fff; /* Latar belakang putih */
+  border: 1px solid #e5e7eb; /* Border tipis abu */
+  border-radius: 12px; /* Sudut melengkung */
+  padding: 15px; /* Isi diberi jarak */
+  margin-bottom: 15px; /* Jarak antar box */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05); /* Bayangan halus */
+}
+
+.section-title {
+  padding-left: 10px; /* Jarak teks dengan garis */
+  border-left: 4px solid #22c55e; /* Garis hijau di kiri */
+  margin-bottom: 10px; /* Jarak bawah */
+  color: #111827; /* Warna teks hampir hitam */
+}
+
+.photo {
+  width: 220px; /* Lebar gambar */
+  height: 220px;
+  border-radius: 50%; /* bulat sempurna */
+  border: 3px solid #c4c4c4; /* border lingkaran */
+  display: block; /* Biar bisa diatur margin auto */
+  margin: 10px auto; /* Tengah + jarak */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08); /* Bayangan tipis */
+  object-fit: cover;
+}
+
+.avatar {
+  width: 220px;
+  height: 220px;
+  object-fit: cover; /* Biar gambar tidak gepeng */
+  border-radius: 50%; /* Bulat sempurna */
+  border: 3px solid #e5e7eb; /* Border lingkaran */
+  display: block;
+  margin: 10px auto; /* Tengah */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08); /* Bayangan tipis */
+}
+
+a {
+  color: #2563eb; /* Biru */
+  text-decoration: none; /* Hilangkan garis bawah bawaan */
+  font-weight: bold; /* Tebal */
+  transition: color 0.2s ease; /* Animasi halus */
+}
+
+a:hover {
+  color: #1d4ed8; /* Biru lebih gelap */
+  text-decoration: underline; /* Garis bawah muncul saat hover */
+}
