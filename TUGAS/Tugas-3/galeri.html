@@ -1,77 +1,59 @@
-<!DOCTYPE html> <!-- Menentukan bahwa dokumen ini menggunakan HTML5 -->
-
-<html lang="id"> <!-- Menandakan bahwa bahasa halaman ini adalah Bahasa Indonesia -->
+<!DOCTYPE html>
+<html lang="id">
   <head>
-    <meta charset="UTF-8" /> <!-- Mengatur karakter agar teks (termasuk huruf Indonesia) tampil dengan benar -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Membuat tampilan responsif di HP/tablet -->
-    <title>Galeri Karya Santri</title> <!-- Judul halaman yang tampil di tab browser -->
-    <link rel="stylesheet" href="style.css" /> <!-- Menghubungkan halaman ini ke file CSS eksternal -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galeri Karya Santri</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
+  <body>
 
-  <body> <!-- Semua isi utama halaman ada di dalam body -->
-
-    <!-- Judul Utama -->
-    <header> <!-- Bagian kepala halaman -->
-      <h1>Galeri Karya Santri</h1> <!-- Judul besar halaman -->
-      <p>Karya Pertama: Website Profil Pribadi</p> <!-- Subjudul atau deskripsi singkat -->
+    <header>
+      <h1>Galeri Karya Santri</h1>
+      <p>Karya Pertama: Website Profil Pribadi</p>
     </header>
 
-    <!-- Navbar -->
-    <nav> <!-- Bagian navigasi/menu -->
-      <a href="index.html">Beranda</a> <!-- Link ke halaman utama -->
-      <a href="biodatadiri.html">Biodatadi</a> <!-- Link ke halaman biodata -->
-      <a href="jadwal.html">Jadwal</a> <!-- Link ke halaman jadwal -->
-      <a href="galeri.html" class="active">Galeri</a> <!-- Link aktif (halaman sekarang) -->
-      <a href="feedback.html">Feedback</a> <!-- Link ke halaman feedback -->
+    <nav>
+      <a href="index.html">Beranda</a>
+      <a href="biodatadiri.html">Biodatadi</a>
+      <a href="jadwal.html">Jadwal</a>
+      <a href="galeri.html" class="active">Galeri</a>
+      <a href="feedback.html">Feedback</a>
     </nav>
 
-    <!-- Section Galeri Desain -->
-    <section class="section"> <!-- Bagian khusus berisi galeri gambar -->
-      <h2 class="section-title">Karya Saya</h2> <!-- Judul untuk bagian galeri gambar -->
-
-      <div class="gallery"> <!-- Grid galeri berisi beberapa card gambar -->
-
-        <!-- Gambar 1 -->
-        <figure class="card"> <!-- Setiap gambar dan keterangannya dibungkus dalam figure -->
-          <img src="../../images/Orang sakit.jpg" alt="Diri Saya" /> <!-- Gambar karya (pastikan path benar) -->
-          <figcaption>Foto Saya saat berada di depan asrama ibnu qoyyim.</figcaption> <!-- Keterangan gambar -->
-        </figure>
-
-        <!-- Gambar 2 -->
+    <section class="section">
+      <h2 class="section-title">Karya Saya</h2>
+      <div class="gallery">
         <figure class="card">
-          <img src="../../images/Hasil.jpg" alt="Hasil Cooding" /> <!-- Gambar hasil coding -->
-          <figcaption>Hasil cooding awal bikin website profil saya.</figcaption>
+          <img src="../../images/Orang sakit.jpg" alt="Diri Saya" />
+          <figcaption>Foto Saya saat berada di depan asrama ibnu qoyyim.</figcaption>
         </figure>
-
-        <!-- Gambar 3 -->
         <figure class="card">
-          <img src="../../images/foto.diri.saya.jpg" alt="Hobi Saya" /> <!-- Gambar aktivitas pribadi -->
+          <img src="../../images/Hasil.jpg" alt="Hasil Cooding" />
+          <figcaption>Hasil cooding awal bikin wabsite profil saya.</figcaption>
+        </figure>
+        <figure class="card">
+          <img src="../../images/foto.diri.saya.jpg" alt="Hobi Saya" />
           <figcaption>Hobi saya nongkrong bersama kawan-kawan.</figcaption>
         </figure>
-
-        <!-- Gambar 4 -->
         <figure class="card">
-          <img src="../../images/hasilcooding.jpg" alt="Coodingan Saya" /> <!-- Gambar coding lain -->
+          <img src="../../images/hasilcooding.jpg" alt="Coodingan Saya" />
           <figcaption>Hasil coodingan saya saat belajar html.</figcaption>
         </figure>
-
-      </div> <!-- Penutup div gallery -->
-    </section>
-
-    <!-- Section Karya Video -->
-    <section class="section"> <!-- Bagian kedua: galeri video -->
-      <h2 class="section-title">Karya Video</h2> <!-- Judul untuk bagian video -->
-
-      <div class="video-container"> <!-- Wadah untuk video agar rapi di tengah -->
-        <iframe
-          src="../../images/stracing.mp4" <!-- Lokasi file video -->
-          title="Video Santri Stracing" <!-- Judul video (untuk aksesibilitas) -->
-          frameborder="0" <!-- Menghilangkan border di sekitar video -->
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" <!-- Izin fitur interaktif -->
-          allowfullscreen <!-- Membolehkan video ditampilkan dalam layar penuh -->
-        ></iframe>
       </div>
     </section>
 
+    <section class="section">
+      <h2 class="section-title">Karya Video</h2>
+      <div class="video-container">
+        <iframe
+          src="../../images/stracing.mp4"
+          title="Video Santri Stracing"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </section>
   </body>
-</html> <!-- Akhir dari dokumen HTML -->
+</html> 

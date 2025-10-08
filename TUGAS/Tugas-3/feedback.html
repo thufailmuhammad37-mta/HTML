@@ -1,73 +1,63 @@
-<!DOCTYPE html> <!-- Menentukan bahwa dokumen ini menggunakan HTML5 -->
-
-<html lang="id"> <!-- Elemen utama halaman HTML, dengan bahasa Indonesia -->
+<!DOCTYPE html>
+<html lang="id">
 <head>
-  <meta charset="UTF-8"> <!-- Menentukan karakter encoding agar teks tampil dengan benar -->
-  <title>Feedback - HSI Boarding School</title> <!-- Judul halaman di tab browser -->
-  <link rel="stylesheet" href="style.css"> <!-- Menghubungkan halaman ini ke file CSS eksternal -->
+  <meta charset="UTF-8">
+  <title>Feedback - HSI Boarding School</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
-<body> <!-- Semua konten halaman ditulis di dalam tag body -->
-
-  <header> <!-- Bagian atas halaman -->
-    <h1>Formulir Umpan Balik</h1> <!-- Judul besar halaman -->
-    <p>Kritik, Saran, & Masukan</p> <!-- Deskripsi singkat -->
+<body>
+  <header>
+    <h1>Formulir Umpan Balik</h1>
+    <p>Kritik, Saran, & Masukan</p>
   </header>
 
-  <nav> <!-- Menu navigasi antar halaman -->
-    <a href="index.html">Beranda</a> <!-- Link menuju halaman beranda -->
-    <a href="biodatadiri.html">Biodata</a> <!-- Link menuju biodata -->
-    <a href="jadwal.html">Jadwal</a> <!-- Link menuju jadwal -->
-    <a href="galeri.html">Galeri</a> <!-- Link menuju galeri -->
-    <a href="feedback.html" class="active">Feedback</a> <!-- Link aktif (halaman saat ini) -->
+  <nav>
+    <a href="index.html">Beranda</a>
+    <a href="biodatadiri.html">Biodata</a>
+    <a href="jadwal.html">Jadwal</a>
+    <a href="galeri.html">Galeri</a>
+    <a href="feedback.html" class="active">Feedback</a>
   </nav>
 
-  <div class="container"> <!-- Wadah utama konten agar rapi di tengah -->
-    <div class="card"> <!-- Kotak bergaya 'card' yang berisi formulir -->
-      <h3>Formulir Kontak & Saran</h3> <!-- Judul kecil untuk bagian formulir -->
+  <div class="container">
+    <div class="card">
+      <h3>Formulir Kontak & Saran</h3>
+      <form>
+        <label>Nama Lengkap Anda (Opsional):</label>
+        <input type="text" placeholder="Tulis nama Anda">
 
-      <form> <!-- Tag form: wadah semua elemen input -->
-        
-        <label>Nama Lengkap Anda (Opsional):</label> <!-- Label untuk input nama -->
-        <input type="text" placeholder="Tulis nama Anda"> <!-- Kolom teks opsional untuk nama -->
+        <label>Email Anda:</label>
+        <input type="email" placeholder="nama@email.com" required>
 
-        <label>Email Anda:</label> <!-- Label untuk email -->
-        <input type="email" placeholder="nama@email.com" required> <!-- Kolom input email (wajib diisi) -->
+        <label>Rating Kepuasan Website !! (1-10):</label>
+        <input type="number" min="1" max="10" required>
 
-        <label>Rating Kepuasan Website !! (1-10):</label> <!-- Label untuk rating -->
-        <input type="number" min="1" max="10" required> <!-- Input angka dari 1 sampai 10 -->
+        <label>Rekomendasi Website Ini?</label>
+        <input type="radio" name="rekom" value="ya"> Ya, Sangat
+        <input type="radio" name="rekom" value="mungkin"> Biasa Saja
+        <input type="radio" name="rekom" value="tidak"> Tidak
 
-        <label>Rekomendasi Website Ini?</label> <!-- Label untuk pilihan radio -->
-        <!-- Radio button hanya bisa pilih satu karena punya 'name' yang sama -->
-        <input type="radio" name="rekom" value="ya"> Ya, Sangat <!-- Pilihan 1 -->
-        <input type="radio" name="rekom" value="mungkin"> Biasa Saja <!-- Pilihan 2 -->
-        <input type="radio" name="rekom" value="tidak"> Tidak <!-- Pilihan 3 -->
+        <label>Topik yang paling menarik ?:</label>
+        <input type="checkbox"> Beranda
+        <input type="checkbox"> Biodata
+        <input type="checkbox"> Jadwal
+        <input type="checkbox"> Galeri
 
-        <label>Topik yang paling menarik ?:</label> <!-- Label untuk checkbox -->
-        <!-- Checkbox bisa pilih lebih dari satu -->
-        <input type="checkbox"> Beranda <!-- Pilihan halaman beranda -->
-        <input type="checkbox"> Biodata <!-- Pilihan halaman biodata -->
-        <input type="checkbox"> Jadwal <!-- Pilihan halaman jadwal -->
-        <input type="checkbox"> Galeri <!-- Pilihan halaman galeri -->
-
-        <label>Saran Pengembangan:</label> <!-- Label untuk dropdown -->
-        <select> <!-- Menu pilihan (dropdown) -->
-          <option>-- Pilih Bidang --</option> <!-- Pilihan awal/default -->
-          <option>Desain</option> <!-- Bidang desain -->
-          <option>Konten</option> <!-- Bidang konten -->
-          <option>Programmer</option> <!-- Bidang pemrograman -->
+        <label>Saran Pengembangan:</label>
+        <select>
+          <option>-- Pilih Bidang --</option>
+          <option>Desain</option>
+          <option>Konten</option>
+          <option>Programmer</option>
         </select>
 
-        <label>Pesan/Saran Lengkap:</label> <!-- Label untuk kotak teks panjang -->
-        <textarea rows="4" placeholder="Tulis pesan dan saran Anda di sini..."></textarea> <!-- Area untuk menulis saran panjang -->
+        <label>Pesan/Saran Lengkap:</label>
+        <textarea rows="4" placeholder="Tulis pesan dan saran Anda di sini..."></textarea>
 
-        <!-- Tombol-tombol bawah -->
-        <button type="reset" class="reset">Atur Ulang</button> <!-- Tombol untuk menghapus semua isi form -->
-        <button type="submit" class="submit">Kirim Feedback</button> <!-- Tombol untuk mengirim data form -->
-      </form> <!-- Penutup form -->
-    </div> <!-- Penutup card -->
-  </div> <!-- Penutup container -->
-
-</body> <!-- Penutup body -->
-
-</html> <!-- Penutup dokumen HTML -->
+        <button type="reset" class="reset">Atur Ulang</button>
+        <button type="submit" class="submit">Kirim Feedback</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html> 
