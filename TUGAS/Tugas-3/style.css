@@ -1,208 +1,375 @@
-header {
-  text-align: center;
-  padding: 20px;
-}
-
-header img {
-  height: 70px;
-} 
-
-h1 {
-  margin: 10px 0 5px;
-  color: #1e3a8a;
-}
-
-h2 {
-  color: #1e3a8a;
-  margin-bottom: 10px;
-}
-
-nav {
-  text-align: center;
-  margin: 20px 0;
-}
-
-nav a {
-  display: inline-block;
-  margin: 0 5px;
-  padding: 8px 16px;
-  border: 1px solid #ddd;
-  border-radius: 20px;
-  text-decoration: none;
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f9fafb;
   color: #333;
 }
 
-nav a.active, nav a:hover {
-  background: #1e3a8a;
-  color: white;
+.logo-container {
+  text-align: center; /* Posisikan logo di tengah */
+  margin-bottom: 20px; /* Tambahkan jarak bawah supaya tidak menempel */
 }
 
 .container {
-  width: 80%;
-  margin: auto;
-  margin-bottom: 40px;
+  max-width: 900px; /* Lebar maksimal agar konten tidak terlalu lebar */
+  margin: auto; /* Posisi tengah (horizontal) */
 }
 
-.card {
-  background: white;
-  padding: 20px;
-  margin: 15px 0;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+.main-title {
+  margin: 18px 0 6px; /* Jarak atas & bawah */
+  text-align: center; /* Posisi tengah */
+  font-size: 2.1rem; /* Ukuran font besar */
+  line-height: 1.1; /* Spasi antar baris rapat */
+  font-weight: 700; /* Tebal */
+  color: #1e3a8a; /* Biru tua */
+  letter-spacing: -0.5px; /* Huruf agak rapat */
 }
 
-.card h3 {
-  margin-top: 0;
-  color: #1e3a8a;
-  border-left: 5px solid #1e3a8a;
-  padding-left: 10px;
+.subtitle {
+  margin: 0 0 10px; /* Jarak bawah kecil */
+  text-align: center; /* Posisi tengah */
+  font-size: 1rem; /* Lebih kecil dari judul */
+  line-height: 1.4; /* Spasi agak lega */
+  font-weight: 500; /* Medium tebal */
+  color: #6b7280; /* Abu kebiruan */
+  opacity: 0.95; /* Sedikit transparan */
 }
 
-.card img {
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
+/* Responsif (untuk layar kecil, misalnya HP) */
+@media (max-width: 480px) {
+  .main-title {
+    font-size: 1.5rem; /* Kecilkan ukuran judul */
+    margin-top: 12px;
+    margin-bottom: 6px;
+  }
+  .subtitle {
+    font-size: 0.95rem; /* Kecilkan subjudul */
+  }
 }
 
-.table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 15px;
+hr {
+  border: none; /* Hilangkan garis default */
+  height: 1px; /* Tebal garis */
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    /* transparan kiri */ rgba(0, 0, 0, 0.06),
+    /* abu tipis di tengah */ rgba(0, 0, 0, 0) /* transparan kanan */
+  );
+  margin: 18px auto; /* Jarak atas bawah + tengah horizontal */
+  max-width: 900px; /* Panjang garis maksimal */
 }
 
-.table th {
-  background: #1e3a8a;
-  color: white;
-  padding: 10px;
+hr.hr-strong {
+  height: 2px;
+  background: #e5e7eb; /* Abu solid */
+  max-width: 700px;
 }
 
-.table td {
-  border: 1px solid #595454;
-  padding: 10px;
-  text-align: center;
+.page-header {
+  padding-top: 28px; /* Jarak atas */
+  padding-bottom: 6px; /* Jarak bawah */
 }
 
-.section {
-  width: 90%;
-  max-width: 1000px;
-  margin: 30px auto;
-  background: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+.logo + .main-title {
+  margin-top: 8px; /* Tambah jarak jika logo ada di atas judul */
+}
+
+.center {
+  text-align: center; /* Class serbaguna untuk teks tengah */
+}
+
+.box {
+  background: #fff; /* Latar belakang putih */
+  border: 1px solid #e5e7eb; /* Border tipis abu */
+  border-radius: 12px; /* Sudut melengkung */
+  padding: 15px; /* Isi diberi jarak */
+  margin-bottom: 15px; /* Jarak antar box */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05); /* Bayangan halus */
 }
 
 .section-title {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 15px;
-  display: flex;
-  align-items: center;
+  padding-left: 10px; /* Jarak teks dengan garis */
+  border-left: 4px solid #1e3a8a; /* Garis hijau di kiri */
+  margin-bottom: 10px; /* Jarak bawah */
+  color: #111827; /* Warna teks hampir hitam */
 }
 
-.section-title::before {
-  content: "";
-  display: inline-block;
-  width: 5px;
-  height: 20px;
-  border-radius: 4px;
-  margin-right: 8px;
+.photo {
+  width: 220px; /* Lebar gambar */
+  height: 220px;
+  border-radius: 50%; /* bulat sempurna */
+  border: 3px solid #c4c4c4; /* border lingkaran */
+  display: block; /* Biar bisa diatur margin auto */
+  margin: 10px auto; /* Tengah + jarak */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08); /* Bayangan tipis */
+  object-fit: cover;
 }
 
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  margin-top: 10px;
+.avatar {
+  width: 220px;
+  height: 220px;
+  object-fit: cover; /* Biar gambar tidak gepeng */
+  border-radius: 50%; /* Bulat sempurna */
+  border: 3px solid #e5e7eb; /* Border lingkaran */
+  display: block;
+  margin: 10px auto; /* Tengah */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08); /* Bayangan tipis */
 }
 
-.card {
-  background: #fff;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+a {
+  color: #1e3a8a; /* Biru */
+  text-decoration: none; /* Hilangkan garis bawah bawaan */
+  font-weight: bold; /* Tebal */
+  transition: color 0.2s ease; /* Animasi halus */
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+a:hover {
+  color: #1e3a8a; /* Biru lebih gelap */
+  text-decoration: underline; /* Garis bawah muncul saat hover */
+}
+
+header { /* Bagian header halaman */
+  text-align: center; /* Isi header (logo/judul) rata tengah */
+  padding: 20px; /* Ruang di dalam header */
+}
+
+header img { 
+  height: 70px; /* Tinggi logo atau gambar di header */
+} 
+
+h1 {
+  margin: 10px 0 5px; /* Jarak atas 10px, bawah 5px */
+  color: #1e3a8a; /* Warna teks biru tua */
+}
+
+h2 {
+  color: #1e3a8a; /* Warna teks biru tua */
+  margin-bottom: 10px; /* Jarak bawah 10px */
+}
+
+nav { /* Area navigasi/menu */
+  text-align: center; /* Menu di tengah */
+  margin: 20px 0; /* Jarak atas dan bawah 20px */
+}
+
+nav a {
+  display: inline-block; /* Supaya bisa diberi padding dan margin */
+  margin: 0 5px; /* Jarak antar tombol */
+  padding: 8px 16px; /* Ruang dalam tombol */
+  border: 1px solid #ddd; /* Garis pinggir abu muda */
+  border-radius: 20px; /* Sudut tombol membulat */
+  text-decoration: none; /* Hilangkan garis bawah link */
+  color: #333; /* Warna teks abu tua */
+}
+
+nav a.active, nav a:hover {
+  background: #1e3a8a; /* Warna latar biru tua saat aktif/hover */
+  color: white; /* Warna teks jadi putih */
+}
+
+.container {
+  width: 80%; /* Lebar kontainer 80% dari layar */
+  margin: auto; /* Rata tengah */
+  margin-bottom: 40px; /* Jarak bawah 40px */
+}
+
+.card { /* Gaya untuk elemen card */
+  background: white; /* Latar belakang putih */
+  padding: 20px; /* Ruang dalam card */
+  margin: 15px 0; /* Jarak antar card */
+  border-radius: 10px; /* Sudut membulat */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Bayangan halus */
+}
+
+.card h3 {
+  margin-top: 0; /* Hilangkan jarak atas */
+  color: #1e3a8a; /* Warna teks biru tua */
+  border-left: 5px solid #1e3a8a; /* Garis vertikal di kiri judul */
+  padding-left: 10px; /* Ruang antara garis dan teks */
 }
 
 .card img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 13px;
+  border-radius: 50%; /* Membuat gambar bulat */
+  width: 120px; /* Lebar gambar */
+  height: 120px; /* Tinggi gambar */
+  object-fit: cover; /* Gambar menyesuaikan tanpa distorsi */
+}
+
+.table {
+  width: 100%; /* Tabel selebar kontainer */
+  border-collapse: collapse; /* Gabungkan garis antar sel */
+  margin-top: 15px; /* Jarak atas */
+}
+
+.table th {
+  background: #1e3a8a; /* Latar header tabel biru tua */
+  color: white; /* Teks putih */
+  padding: 10px; /* Ruang dalam */
+}
+
+.table td {
+  border: 1px solid #595454; /* Garis antar sel abu tua */
+  padding: 10px; /* Ruang dalam */
+  text-align: center; /* Isi sel rata tengah */
+}
+
+.section {
+  width: 90%; /* Lebar 90% dari layar */
+  max-width: 1000px; /* Lebar maksimum 1000px */
+  margin: 30px auto; /* Tengah dengan jarak vertikal 30px */
+  background: #fff; /* Latar belakang putih */
+  padding: 20px; /* Ruang dalam */
+  border-radius: 12px; /* Sudut membulat */
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
+}
+
+.section-title {
+  font-size: 1.2rem; /* Ukuran teks sedikit besar */
+  font-weight: 600; /* Teks agak tebal */
+  margin-bottom: 15px; /* Jarak bawah */
+  display: flex; /* Flexbox agar sejajar vertikal */
+  align-items: center; /* Sejajarkan vertikal tengah */
+}
+
+.section-title::before {
+  content: ""; /* Tambahkan elemen dekoratif di kiri */
+  display: inline-block;
+  width: 5px; /* Lebar garis kecil */
+  height: 20px; /* Tinggi garis kecil */
+  border-radius: 4px; /* Sudut membulat */
+  margin-right: 8px; /* Jarak ke teks */
+}
+
+.gallery {
+  display: grid; /* Gunakan grid layout */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Kolom otomatis menyesuaikan ukuran layar */
+  gap: 20px; /* Jarak antar item */
+  margin-top: 10px; /* Jarak atas */
+}
+
+.card { /* Gaya card versi galeri */
+  background: #fff; /* Latar putih */
+  border: 1px solid #e5e7eb; /* Garis pinggir abu muda */
+  border-radius: 12px; /* Sudut membulat */
+  overflow: hidden; /* Potong bagian yang keluar */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efek animasi saat hover */
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Naik sedikit saat di-hover */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15); /* Bayangan lebih jelas */
+}
+
+.card img {
+  width: 100%; /* Gambar selebar card */
+  height: 150px; /* Tinggi tetap */
+  object-fit: cover; /* Isi penuh tanpa melar */
+  border-radius: 13px; /* Sudut sedikit membulat */
 }
 
 .card figcaption {
-  padding: 10px;
-  text-align: left;
-  font-size: 0.9rem;
-  color: #444;
+  padding: 10px; /* Ruang dalam caption */
+  text-align: left; /* Teks rata kiri */
+  font-size: 0.9rem; /* Ukuran teks kecil */
+  color: #444; /* Warna abu tua */
 }
 
 .video-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 15px;
+  display: flex; /* Gunakan flexbox */
+  justify-content: center; /* Posisikan video di tengah */
+  margin-top: 15px; /* Jarak atas */
 }
 
 .video-container iframe {
-  width: 100%;
-  max-width: 720px;
-  height: 405px;
-  border-radius: 12px;
-  border: none;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  width: 100%; /* Lebar responsif */
+  max-width: 720px; /* Batas maksimum 720px */
+  height: 405px; /* Rasio 16:9 */
+  border-radius: 12px; /* Sudut membulat */
+  border: none; /* Tanpa garis */
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15); /* Bayangan lembut */
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px) { /* Saat layar kecil (HP/tablet) */
   nav {
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Menu bisa turun ke baris bawah */
   }
 
   .gallery {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Galeri jadi 1 kolom */
   }
 
   .video-container iframe {
-    height: 220px;
+    height: 220px; /* Tinggi video menyesuaikan layar kecil */
   }
 }
 
 form {
-  display: flex;
-  flex-direction: column;
+  display: flex; /* Gunakan flexbox */
+  flex-direction: column; /* Susun elemen ke bawah */
 }
 
 form label {
-  margin: 10px 0 5px;
-  font-weight: bold;
+  margin: 10px 0 5px; /* Jarak sekitar label */
+  font-weight: bold; /* Teks tebal */
 }
 
 form input, form select, form textarea {
-  padding: 8px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  padding: 8px; /* Ruang dalam */
+  border: 1px solid #ddd; /* Garis abu muda */
+  border-radius: 8px; /* Sudut membulat */
 }
 
 form button {
-  margin-top: 15px;
-  padding: 10px;
+  margin-top: 15px; /* Jarak atas */
+  padding: 10px; /* Ruang dalam tombol */
+  border: none; /* Tanpa garis */
+  border-radius: 8px; /* Sudut membulat */
+  cursor: pointer; /* Kursor tangan saat diarahkan */
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.btn {
   border: none;
+  padding: 10px 18px;
   border-radius: 8px;
+  font-weight: 600;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-form .reset {
-  background: #6b7280;
+.btn-primary {
+  background-color: #2563eb;
   color: white;
 }
 
-form .submit {
+.btn-primary:hover {
+  background-color: #1d4ed8;
+}
+
+.btn-secondary {
+  background-color: #6b7280;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #374151;
+}
+
+
+.site-footer {
+  text-align: center;
+  padding: 1.5rem 1rem;
   background: #1e3a8a;
-  color: white;
-} 
+  color: #d2d8e1;
+  margin-top: 3rem;
+  font-size: 0.9rem;
+  border-top: 1px solid #e5e7eb;
+}
