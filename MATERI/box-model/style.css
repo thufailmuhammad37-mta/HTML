@@ -1,0 +1,103 @@
+.card {
+    background-color: aliceblue;
+    box-shadow: 0px 2px 2px #ccc;
+    padding: 6px;
+    color: black;
+    text-align: center;
+}
+
+/* box dengan polos */
+#box1 {
+    width: 200px;
+    height: 200px;
+    background-color: crimson;
+    color: white;
+    line-height: 10;
+}
+
+/* box dengan padding */
+#box2 {
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+    color: white;
+    line-height: 10;
+    /* padding: 10px; */
+    padding-top: 12px;
+    padding-right: 20px;
+    padding-bottom: 12px;
+    padding-left: 20px;
+}
+
+/* box dengan padding + border */
+#box3 {
+    width: 200px;
+    height: 200px;
+    background-color: forestgreen;
+    color: white;
+    line-height: 10;
+    padding: 10px;
+    border: 5px saddlebrown;
+}
+
+/* box dengan padding + border + margin */
+#box4 {
+    width: 200px;
+    height: 200px;
+    background-color: gold;
+    color: white;
+    line-height: 10;
+    padding: 10px;
+    border: 5px tomato;
+    /* jarak di luar box */
+    /* margin: 20px; */
+    margin-top: 20px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
+
+/* static */
+#box5 {
+    width: 200px;
+    height: 200px;
+    background-color: brown;
+    color: white;
+    line-height: 10;
+}
+
+/* relative */
+#box6 {
+    width: 200px;
+    height: 200px;
+    background-color: chocolate;
+    color: white;
+    line-height: 10;
+    position: relative;
+    top: 20px;
+    left: 20px;
+}
+
+/* absolute */
+#box7 {
+    width: 200px;
+    height: 200px;
+    background-color: blueviolet;
+    color: white;
+    line-height: 10;
+    position: absolute;
+    top: 5px;
+    right: 20px;
+}
+
+/* fixed */
+#box8 {
+    width: 200px;
+    height: 200px;
+    background-color: darkorange;
+    color: white;
+    line-height: 10;
+    position: fixed;
+    top: 25px;
+    right: 40px;
+}

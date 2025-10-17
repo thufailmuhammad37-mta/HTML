@@ -1,0 +1,86 @@
+@font-face {
+  font-family: 'Font Digital';
+  src: url('fonts\Digital-7.ttf');
+}
+.digital {
+  font-family: 'Font Digital';
+}
+
+.text-tengah {
+    text-align: center;
+}
+
+.text-kiri {
+    text-align: left;
+}
+
+.text-kanan {
+    text-align: right;
+}
+
+.text-rata {
+    text-align: justify;
+}
+
+/* atur ketebalan */
+.tipis {
+    /* atur ketebalan */
+    font-weight: 100;
+    /* atur ukuran */
+    font-size: small;
+    color: crimson;
+}
+
+.agak-tebal {
+    font-weight: 600;
+    font-size: 30px;
+    color: brown;
+}
+
+.tebal {
+    /* bold = 700 */
+    font-weight: bold;
+    font-size: x-large;
+    color: blue;
+}
+
+/* hilangkan underline pada link (a) */
+.button-google {
+    text-decoration: none;
+    background-color: blue;
+    color: white;
+    padding: 4px 6px;
+}
+
+/* atur jarak antar tinggi dan pendek text */
+.pendek {
+    line-height: 0.8;
+    background-color: brown;
+}
+
+.tinggi {
+    line-height: 2;
+    background-color: blue;
+}
+
+/* antar jarak huruf text */
+.rapat {
+    letter-spacing: -2px;
+    background-color: rgb(116, 12, 36);
+}
+
+.renggang {
+    letter-spacing: 6px;
+    background-color: rgb(104, 7, 83);
+}
+
+/* atur jarak antar kata */
+.dekat {
+    word-spacing: -3px;
+    background-color: mediumvioletred;
+}
+
+.jauh {
+    word-spacing: 6px;
+    background-color: tomato;
+}
