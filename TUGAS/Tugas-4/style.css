@@ -1,123 +1,123 @@
-@font-face { /* Menambahkan font custom dari file lokal */
-  font-family: 'BismillahScript'; /* Nama font yang akan digunakan di CSS */
-  src: url(fonts/Bismillah\ Script.ttf) format('truetype'); /* Lokasi file font & formatnya */
-  font-weight: normal; /* Berat huruf normal */
-  font-style: normal; /* Gaya huruf normal (tidak miring) */
+@font-face {
+  font-family: 'BismillahScript';
+  src: url(fonts/Bismillah\ Script.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 /* RESET BIASA */
 * {
-  margin: 0; /* Menghapus jarak default antar elemen */
-  padding: 0; /* Menghapus padding default */
-  box-sizing: border-box; /* Agar padding & border tidak menambah ukuran elemen */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  font-family: 'Poppins', sans-serif; /* Mengatur font utama */
-  background-color: #f9fafb; /* Warna latar belakang halaman */
-  color: #222; /* Warna teks utama */
-  line-height: 1.8; /* Jarak antar baris teks */
-  padding: 0 15%; /* Memberi jarak kiri-kanan agar teks tidak menempel di tepi layar */
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9fafb;
+  color: #222;
+  line-height: 1.8;
+  padding: 0 15%;
 }
 
 header {
-  background-color: #dbeafe; /* Warna latar belakang header (biru muda) */
-  text-align: center; /* Isi header rata tengah */
-  padding: 40px 20px; /* Jarak dalam header */
-  border-radius: 10px; /* Sudut membulat */
-  margin-top: 40px; /* Jarak atas header */
-  margin-bottom: 40px; /* Jarak bawah header */
+  background-color: #dbeafe;
+  text-align: center;
+  padding: 40px 20px;
+  border-radius: 10px;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 header h1 {
-  font-size: 2.2em; /* Ukuran huruf besar untuk judul utama */
-  font-weight: 700; /* Huruf tebal */
-  color: #1d4ed8; /* Warna biru */
-  letter-spacing: 2px; /* Spasi antar huruf */
+  font-size: 2.2em;
+  font-weight: 700;
+  color: #1d4ed8;
+  letter-spacing: 2px;
 }
 
 header .subtitle {
-  font-size: 1em; /* Ukuran teks subjudul */
-  color: #475569; /* Warna abu keabu-biruan */
-  font-style: italic; /* Huruf miring */
-  margin-top: 8px; /* Jarak atas dari judul */
+  font-size: 1em;
+  color: #475569;
+  font-style: italic;
+  margin-top: 8px;
 }
 
 article {
-  background-color: #ffffff; /* Warna latar putih */
-  padding: 25px 30px; /* Jarak dalam konten artikel */
-  border-radius: 10px; /* Sudut membulat */
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05); /* Bayangan lembut */
-  margin-bottom: 30px; /* Jarak bawah antar elemen */
+  background-color: #ffffff;
+  padding: 25px 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  margin-bottom: 30px;
 }
 
 article h2 {
-  color: #047857; /* Warna hijau tua */
-  font-size: 1.5em; /* Ukuran huruf subjudul artikel */
-  font-weight: 600; /* Ketebalan sedang */
-  margin-bottom: 15px; /* Jarak bawah dari judul ke paragraf */
+  color: #047857;
+  font-size: 1.5em;
+  font-weight: 600;
+  margin-bottom: 15px;
 }
 
 article p {
-  font-size: 1em; /* Ukuran teks normal */
-  text-align: justify; /* Rata kiri-kanan agar rapi */
-  margin-bottom: 15px; /* Jarak antar paragraf */
+  font-size: 1em;
+  text-align: justify;
+  margin-bottom: 15px;
 }
 
 blockquote {
-  font-style: italic; /* Teks miring (untuk kutipan) */
-  background-color: #e0f2fe; /* Warna latar biru muda */
-  border-left: 5px solid #1e40af; /* Garis vertikal di sisi kiri kutipan */
-  padding: 15px 25px; /* Jarak dalam */
-  margin: 25px 0; /* Jarak atas & bawah */
-  color: #1e3a8a; /* Warna teks biru tua */
-  border-radius: 5px; /* Sudut sedikit membulat */
-  font-size: 1.05em; /* Sedikit lebih besar dari teks biasa */
+  font-style: italic;
+  background-color: #e0f2fe;
+  border-left: 5px solid #1e40af;
+  padding: 15px 25px;
+  margin: 25px 0;
+  color: #1e3a8a;
+  border-radius: 5px;
+  font-size: 1.05em;
 }
 
 .note {
-  background-color: #fee2e2; /* Warna latar merah muda */
-  border-left: 5px solid #ef4444; /* Garis kiri merah */
-  padding: 15px 20px; /* Jarak dalam */
-  border-radius: 6px; /* Sudut membulat */
-  color: #b91c1c; /* Warna teks merah tua */
-  margin-bottom: 40px; /* Jarak bawah ke elemen berikutnya */
-  font-size: 0.95em; /* Ukuran teks sedikit lebih kecil */
+  background-color: #fee2e2;
+  border-left: 5px solid #ef4444;
+  padding: 15px 20px;
+  border-radius: 6px;
+  color: #b91c1c;
+  margin-bottom: 40px;
+  font-size: 0.95em;
 }
 
 .penulis {
-  text-align: right; /* Teks rata kanan */
-  font-weight: 600; /* Huruf tebal */
-  margin-bottom: 5px; /* Jarak bawah sedikit */
+  text-align: right;
+  font-weight: 600;
+  margin-bottom: 5px;
 }
 
 .signature {
-  font-family: 'BismillahScript', cursive; /* Menggunakan font custom dari atas */
-  font-size: 50px; /* Ukuran besar, seperti tanda tangan */
-  color: #b91c1c; /* Warna merah tua */
-  text-align: right; /* Teks rata kanan */
+  font-family: 'BismillahScript', cursive;
+  font-size: 50px;
+  color: #b91c1c;
+  text-align: right;
 }
 
-@media (max-width: 768px) { /* Pengaturan responsif untuk layar kecil (HP/tablet) */
+@media (max-width: 768px) {
   body {
-    padding: 0 8%; /* Mengurangi padding agar pas di layar kecil */
+    padding: 0 8%;
   }
 
   header h1 {
-    font-size: 1.8em; /* Mengecilkan judul di layar kecil */
+    font-size: 1.8em;
   }
 
   article {
-    padding: 20px; /* Mengurangi padding agar tidak terlalu lebar di HP */
+    padding: 20px;
   }
 }
 
 footer {
-  background-color: #3377d6; /* Warna latar biru tua untuk footer */
-  color: #0e0e0e; /* Warna teks hitam keabu-abuan */
-  text-align: center; /* Teks rata tengah */
-  padding: 15px 0; /* Jarak atas-bawah di dalam footer */
-  font-family: "Poppins", sans-serif; /* Font yang konsisten dengan body */
-  font-size: 0.95rem; /* Ukuran sedikit lebih kecil */
-  border-top: 1px solid #ddd; /* Garis pemisah di bagian atas footer */
+  background-color: #3377d6;
+  color: #0e0e0e;
+  text-align: center;
+  padding: 15px 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.95rem;
+  border-top: 1px solid #ddd;
 }
