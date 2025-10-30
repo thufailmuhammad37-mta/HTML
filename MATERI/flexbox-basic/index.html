@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="Light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Box model</title>
+    <!-- add pico css -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>CSS3 Flexbox - Latihan Tugas</h1>
+      <hr />
+      <h2>Latihan 1:pricing box</h2>
+      <div class="flexbox-area">
+        <!-- flexbox items (yg ada di dalam) -->
+         <div class="card">
+            <h3>Basic</h3>
+        </div>
+        <div class="card pro-blue">
+            <h3>Pro</h3>
+        </div>
+        <div class="card">
+            <h3>Enterprise</h3>
+        </div>
+    </div>
+    <br />
+    <hr />
+    <br />
+    <h2>Latihan 2: Alert Info</h2>    
+    <div class="flexbox-area Alert-info">
+        <p>ℹ Info: Jangan Sampai Ketumpahan Indomie</p>
+        <button type="button"
+            onclick="this.parentElement.style.display='none'">❌
+        </button>
+    </div>
+  </body>
+</html>

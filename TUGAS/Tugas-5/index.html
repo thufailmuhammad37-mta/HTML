@@ -1,0 +1,76 @@
+<!DOCTYPE html> <!-- Menentukan bahwa ini adalah dokumen HTML5 -->
+<html lang="id"> <!-- Menandakan bahasa utama halaman ini adalah Bahasa Indonesia -->
+<head>
+  <meta charset="UTF-8"> <!-- Mengatur karakter agar mendukung huruf khusus -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Membuat tampilan responsif di HP -->
+  <title>Components</title> <!-- Judul halaman di tab browser -->
+  <link rel="stylesheet" href="style.css"> <!-- Menghubungkan ke file CSS eksternal -->
+</head>
+
+<body>
+
+  <div class="box">
+  <section class="task"> <!-- Pembungkus satu bagian tugas -->
+    <h2>Info Peringatan</h2> <!-- Judul tugas pertama -->
+  </div>
+
+  <div class="box">
+    <div class="alert"> <!-- Kotak peringatan -->
+      <p>ℹ️ Info: Pastikan data Anda sudah lengkap sebelum dikirim.</p> <!-- Pesan peringatan -->
+      <button class="close" onclick="this.parentElement.style.display='none'">×</button> <!-- Tombol X untuk menutup alert -->
+    </div>
+  </section>
+        <section class="task"> <!-- Bagian kedua -->
+          <h2>Kartu Profil</h2> <!-- Judul bagian -->
+      
+          <div class="profile-card"> <!-- Kartu profil utama -->
+            <div class="avatar"> <!-- Wadah gambar profil -->
+              <img src="../../images/foto.saya.jpg" alt="User Photo"> <!-- Gambar profil -->
+              <span class="badge">Aktif</span> <!-- Lencana status “Aktif” -->
+            </div>
+            <h3>Muhammad Thufail</h3> <!-- Nama pengguna -->
+            <p>Frontend Developer</p> <!-- Jabatan pengguna -->
+          </div>
+  </section>
+  </div>
+
+  <div class="box">
+  <section class="task"> <!-- Bagian ketiga -->
+    <h2>Kartu Harga</h2> <!-- Judul bagian -->
+
+    <div class="pricing"> <!-- Wadah utama untuk semua kartu harga -->
+      
+      <div class="plan"> <!-- Satu paket harga -->
+        <h3>Basic</h3> <!-- Nama paket -->
+        <p class="price">Rp50.000</p> <!-- Harga paket -->
+        <ul> <!-- Daftar fitur paket -->
+          <li>1 Project</li> <!-- Fitur pertama -->
+          <li>Community Support</li> <!-- Fitur kedua -->
+        </ul>
+        <button>Pilih Paket</button> <!-- Tombol aksi -->
+      </div>
+
+      <div class="plan highlight"> <!-- Paket Pro, diberi kelas highlight agar tampil menonjol -->
+        <h3>Pro</h3>
+        <p class="price">Rp150.000</p>
+        <ul>
+          <li>5 Projects</li>
+          <li>Priority Support</li>
+        </ul>
+        <button>Pilih Paket</button>
+      </div>
+
+      <div class="plan">
+        <h3>Enterprise</h3>
+        <p class="price">Rp300.000</p>
+        <ul>
+          <li>Unlimited Projects</li>
+          <li>Dedicated Support</li>
+        </ul>
+        <button>Pilih Paket</button>
+      </div>
+    </div> <!-- Akhir dari .pricing -->
+  </section>
+  </div>
+</body>
+</html>

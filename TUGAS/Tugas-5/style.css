@@ -1,0 +1,203 @@
+body {
+  font-family: "arial", sans-serif; /* Gunakan font bersih dan modern */
+  background-color: #f9fafb; /* Warna abu muda lembut sebagai latar belakang */
+  margin: 0; /* Hilangkan jarak default dari browser */
+  padding: 40px; /* Beri jarak dalam agar konten tidak mepet tepi */
+  color: #111827; /* Warna teks utama */
+}
+
+/* Bagian judul tiap komponen (seperti "Alert Info", "Profile Card", dsb) */
+h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Nomor kecil sebelum judul (contoh: 1️⃣ 2️⃣ 3️⃣) */
+h2::before {
+  content: "🔹"; /* Simbol biru untuk mempercantik */
+}
+
+.box {
+  background: #fff; /* Latar belakang putih */
+  border: 1px solid #e5e7eb; /* Border tipis abu */
+  border-radius: 12px; /* Sudut melengkung */
+  padding: 15px; /* Isi diberi jarak */
+  margin-bottom: 15px; /* Jarak antar box */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05); /* Bayangan halus */
+}
+
+/* Kotak pembungkus tiap bagian (biar seperti card lembut di background putih) */
+.section {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+}
+
+/* Kotak pemberitahuan utama */
+.alert {
+  position: relative; /* Supaya tombol X bisa diletakkan di pojok kanan atas */
+  background-color: #e0f2fe; /* Warna biru muda untuk latar */
+  border: 1px solid #38bdf8; /* Garis tepi biru */
+  padding: 12px 40px 12px 16px; /* Ruang dalam (kanan lebih besar untuk tombol X) */
+  border-radius: 8px; /* Membuat sudut membulat agar lembut */
+  font-family: "Segoe UI", sans-serif; /* Gunakan font yang bersih */
+  color: #0c4a6e; /* Warna teks biru tua */
+}
+
+/* Tombol X (close) */
+.alert .close {
+  position: absolute; /* Agar bisa ditempatkan di atas kanan */
+  top: 8px; /* Jarak dari atas */
+  right: 8px; /* Jarak dari kanan */
+  background: transparent; /* Tanpa warna latar */
+  border: none; /* Hilangkan border default */
+  font-size: 16px; /* Ukuran teks */
+  cursor: pointer; /* Tanda tangan saat diarahkan */
+  border-radius: 4px; /* Sedikit melengkung agar rapi */
+  transition: background 0.2s ease; /* Animasi halus saat hover */
+}
+
+/* Saat tombol X diarahkan */
+.alert .close:hover {
+  background-color: #bae6fd; /* Warna biru lebih muda */
+}
+
+/* Kotak kartu profil */
+.profile-card {
+  display: flex; /* Gunakan flexbox untuk menyusun isi */
+  flex-direction: column; /* Elemen disusun vertikal */
+  align-items: center; /* Posisikan isi di tengah */
+  background-color: white; /* Latar putih */
+  border-radius: 12px; /* Sudut membulat */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
+  padding: 20px;
+  width: 220px;
+  text-align: center;
+  font-family: "Segoe UI", sans-serif;
+  transition: transform 0.3s ease; /* Efek lembut saat hover */
+}
+
+/* Efek hover agar sedikit membesar */
+.profile-card:hover {
+  transform: scale(1.05);
+}
+
+/* Bagian foto profil */
+.avatar {
+  position: relative; /* Agar badge bisa ditempatkan di dalamnya */
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+/* Gambar profil */
+.avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%; /* Biar bentuknya bulat */
+  object-fit: cover; /* Gambar menyesuaikan area */
+}
+
+/* Lencana "Active" */
+.badge {
+  position: absolute; /* Supaya bisa ditaruh di atas foto */
+  top: 5px;
+  right: 5px;
+  background-color: #22c55e; /* Warna hijau */
+  color: white;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 12px; /* Biar oval seperti kapsul */
+}
+
+/* Nama dan jabatan */
+.profile-card h3 {
+  margin: 8px 0 4px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #111827;
+}
+
+.profile-card p {
+  color: #555;
+  font-size: 14px;
+}
+
+/* Container untuk semua kartu harga */
+.pricing {
+  display: flex; /* Gunakan flex agar sejajar */
+  justify-content: center; /* Posisikan di tengah */
+  gap: 20px; /* Jarak antar kartu */
+  flex-wrap: wrap; /* Agar responsif di layar kecil */
+  margin-top: 20px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Setiap kartu harga */
+.plan {
+  border: 1px solid #ddd; /* Garis tepi tipis */
+  border-radius: 10px; /* Sudut melengkung */
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  background-color: white;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+/* Judul paket */
+.plan h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #111827;
+}
+
+/* Harga */
+.plan .price {
+  font-size: 20px;
+  color: #4f46e5; /* Warna ungu khas */
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+/* Daftar fitur */
+.plan ul {
+  list-style: none; /* Hilangkan bullet list */
+  padding: 0;
+  margin: 0 0 16px 0;
+}
+
+.plan ul li {
+  margin-bottom: 6px;
+  color: #444;
+  font-size: 14px;
+}
+
+/* Tombol pilih paket */
+.plan button {
+  background-color: #4f46e5; /* Warna ungu */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+/* Saat tombol diarahkan */
+.plan button:hover {
+  background-color: #6366f1; /* Ungu lebih terang */
+}
+
+/* Kartu tengah (Pro) diberi highlight */
+.plan.highlight {
+  border-color: #4f46e5; /* Garis ungu */
+  transform: scale(1.05); /* Sedikit lebih besar */
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2); /* Bayangan lembut ungu */
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Feedback - HSI Boarding School</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <img
+          src="../../images/HSI.Bording.School.jpg"
+          alt="Logo HSI"
+          class="logo"
+        />
+        <h1>HSI Boarding School Purworejo</h1>
+        <p>Kritik, Saran, dan Masukan untuk Website Profil</p>
+      </div>
+    </header>
+
+    <nav>
+      <a href="index.html">Beranda</a>
+      <a href="biodatadiri.html">Biodata</a>
+      <a href="jadwal.html">Jadwal</a>
+      <a href="galeri.html">Galeri</a>
+      <a href="feedback.html" class="active">Feedback</a>
+    </nav>
+
+    <div class="container">
+      <div class="card">
+        <h3>Formulir Kontak & Saran</h3>
+        <form>
+          <label>Nama Lengkap Anda (Opsional):</label>
+          <input type="text" placeholder="Tulis nama Anda" />
+
+          <label>Email Anda:</label>
+          <input type="email" placeholder="nama@email.com" required />
+
+          <label>Rating Kepuasan Website !! (1-10):</label>
+          <input type="number" min="1" max="10" required />
+
+          <label>Rekomendasi Website Ini?</label>
+          <input type="radio" name="rekom" value="ya" /> Ya, Sangat
+          <input type="radio" name="rekom" value="mungkin" /> Biasa Saja
+          <input type="radio" name="rekom" value="tidak" /> Tidak
+
+          <label>Topik yang paling menarik ?:</label>
+          <input type="checkbox" /> Beranda <input type="checkbox" /> Biodata
+          <input type="checkbox" /> Jadwal <input type="checkbox" /> Galeri
+
+          <label>Saran Pengembangan:</label>
+          <select>
+            <option>-- Pilih Bidang --</option>
+            <option>Desain</option>
+            <option>Konten</option>
+            <option>Programmer</option>
+          </select>
+
+          <label>Pesan/Saran Lengkap:</label>
+          <textarea
+            rows="4"
+            placeholder="Tulis pesan dan saran Anda di sini..."
+          ></textarea>
+
+          <div class="form-actions">
+            <button type="reset" class="btn btn-secondary">Atur Ulang</button>
+            <button type="submit" class="btn btn-primary">
+              Kirim Feedback
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <p>
+        &copy; 2025 HSI Boarding School Purworejo — Kelas X.A Semua hak cipta
+        dilindungi.
+      </p>
+    </footer>
+  </body>
+</html>
