@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styling for portfolio */
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom shadow */
+.shadow-card {
+  @apply shadow-xl shadow-black/20;
+}
+
+/* Hover scale effect */
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+.hover-scale:hover {
+  transform: scale(1.03);
+}
+
+/* Rounded card */
+.card {
+  @apply bg-[#1a1a1a] p-6 rounded-xl shadow-card;
+}
+
+/* Yellow button */
+.btn-yellow {
+  @apply bg-yellow-400 text-black font-semibold px-5 py-3 rounded-lg;
+}
+.btn-yellow:hover {
+  @apply bg-yellow-300;
+}
+
+/* Social icons */
+.social-icon {
+  @apply text-2xl text-gray-300 hover:text-yellow-400 transition;
+}

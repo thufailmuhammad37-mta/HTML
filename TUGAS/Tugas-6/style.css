@@ -1,3 +1,15 @@
+:root {
+  --bg: #f7f9fb;
+  --ink: #1f2937;
+  --muted: #6b7280;
+  --brand: #2141ab; /* Warna utama (Biru) */
+  --brand-ink: #ffffff;
+  --box: #ffffff;
+  --border: #e5e7eb;
+  --accent: #ad8b41; /* Warna aksen (Kuning Emas) */
+}
+
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -9,6 +21,11 @@ body {
 .logo-container {
   text-align: center; /* Posisikan logo di tengah */
   margin-bottom: 20px; /* Tambahkan jarak bawah supaya tidak menempel */
+}
+
+.hsi-logo {
+  width: 110px;
+  height: 110px;
 }
 
 .container {
@@ -34,6 +51,33 @@ body {
   font-weight: 500; /* Medium tebal */
   color: #6b7280; /* Abu kebiruan */
   opacity: 0.95; /* Sedikit transparan */
+}
+
+@media (max-width: 768px) {
+  /* Saat layar kecil (HP/tablet) */
+  nav {
+    flex-wrap: wrap; /* Menu bisa turun ke baris bawah */
+  }
+  .gallery {
+    grid-template-columns: 1fr; /* Galeri jadi 1 kolom */
+  }
+  .video-container iframe {
+    height: 220px; /* Tinggi video menyesuaikan layar kecil */
+  }
+}
+
+/* MEDIA QUERY: Mengubah tata letak navigasi menjadi 1 kolom di layar kecil (Mobile) */
+@media (max-width: 600px) {
+  .main-nav ul {
+    flex-direction: column; /* Mengubah arah tumpukan item menjadi vertikal */
+    align-items: stretch; /* Memaksa item mengisi seluruh lebar container */
+  }
+  .main-nav li {
+    width: 100%; /* Memastikan setiap list item mengambil lebar penuh */
+  }
+  .main-nav a {
+    padding: 10px;
+  }
 }
 
 /* Responsif (untuk layar kecil, misalnya HP) */
@@ -95,7 +139,7 @@ hr.hr-strong {
 
 .section-title {
   padding-left: 10px; /* Jarak teks dengan garis */
-  border-left: 4px solid #1e3a8a; /* Garis hijau di kiri */
+  border-left: 4px solid #d8de1d; /* Garis hijau di kiri */
   margin-bottom: 10px; /* Jarak bawah */
   color: #111827; /* Warna teks hampir hitam */
 }
@@ -154,26 +198,32 @@ h2 {
   margin-bottom: 10px; /* Jarak bawah 10px */
 }
 
-nav {
-  /* Area navigasi/menu */
-  text-align: center; /* Menu di tengah */
-  margin: 20px 0; /* Jarak atas dan bawah 20px */
+.main-nav {
+  text-align: center;
+  margin-bottom: 20px;
 }
-
-nav a {
-  display: inline-block; /* Supaya bisa diberi padding dan margin */
-  margin: 0 5px; /* Jarak antar tombol */
-  padding: 8px 16px; /* Ruang dalam tombol */
-  border: 1px solid #ddd; /* Garis pinggir abu muda */
-  border-radius: 20px; /* Sudut tombol membulat */
-  text-decoration: none; /* Hilangkan garis bawah link */
-  color: #333; /* Warna teks abu tua */
+.main-nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex; /* Menggunakan Flexbox untuk menyusun item secara horizontal */
+  justify-content: center; /* Rata tengah item */
+  gap: 10px; /* Jarak antar item */
+  flex-wrap: wrap; /* Memungkinkan item turun baris jika tidak muat */
 }
-
-nav a.active,
-nav a:hover {
-  background: #1e3a8a; /* Warna latar biru tua saat aktif/hover */
-  color: white; /* Warna teks jadi putih */
+.main-nav a {
+  display: block;
+  padding: 8px 15px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.2s, color 0.2s;
+}
+.main-nav a:hover,
+.main-nav a.active {
+  background-color: var(--brand);
+  color: var(--brand-ink);
+  border-color: var(--brand);
 }
 
 .container {
@@ -301,19 +351,6 @@ nav a:hover {
   border-radius: 12px; /* Sudut membulat */
   border: none; /* Tanpa garis */
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15); /* Bayangan lembut */
-}
-
-@media (max-width: 768px) {
-  /* Saat layar kecil (HP/tablet) */
-  nav {
-    flex-wrap: wrap; /* Menu bisa turun ke baris bawah */
-  }
-  .gallery {
-    grid-template-columns: 1fr; /* Galeri jadi 1 kolom */
-  }
-  .video-container iframe {
-    height: 220px; /* Tinggi video menyesuaikan layar kecil */
-  }
 }
 
 form {
