@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Layanan – Infotamfindo</title>
+
+  <!-- TAILWIND CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-800">
+
+  <!-- HEADER / MENU -->
+  <header class="bg-white shadow fixed w-full top-0 z-50">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+
+      <!-- LOGO -->
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="logo.png" class="h-12" alt="logo" />
+        <span class="font-bold text-xl">INFOTAMFINDO</span>
+      </a>
+
+      <!-- MENU -->
+      <nav class="space-x-6 font-medium text-gray-700 hidden md:block">
+        <a href="index.html" class="hover:text-orange-600">Beranda</a>
+        <a href="tentang.html" class="hover:text-orange-600">Tentang</a>
+        <a href="layanan.html" class="text-orange-600 font-semibold">Layanan</a>
+        <a href="produk.html" class="hover:text-orange-600">Produk</a>
+        <a href="kontak.html" class="hover:text-orange-600">Kontak</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- SPACER (karena header fixed) -->
+  <div class="pt-20"></div>
+
+  <!-- SECTION: LAYANAN HEADER -->
+  <section
+    class="relative bg-cover bg-center bg-fixed py-24"
+    style="background-image: url('layanan-header.jpg');"
+  >
+    <div class="absolute inset-0 bg-black/50"></div>
+
+    <div class="relative z-10 max-w-4xl mx-auto text-center text-white px-6">
+      <h2 class="text-4xl font-semibold tracking-wide mb-4 uppercase">
+        Layanan
+      </h2>
+      <p class="text-lg leading-relaxed">
+        Menyediakan solusi komprehensif dalam perawatan, fabrikasi, penyewaan,
+        dan penyediaan peralatan pompa tekanan tinggi dengan standar industri terbaik.
+      </p>
+    </div>
+  </section>
+
+  <!-- SECTION: LIST LAYANAN (6 ITEM) -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-10">
+
+      <!-- LAYANAN 1 -->
+      <div class="p-7 bg-gray-50 border border-gray-200 shadow-sm hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">
+          Fabrikasi & Perbaikan Pompa
+        </h3>
+        <p class="text-gray-700 leading-relaxed">
+          Kami mengerjakan fabrikasi, perbaikan, serta refurbish berbagai jenis
+          peralatan pompa tekanan tinggi dengan standar kualitas industri.
+        </p>
+        <a href="#" class="block mt-4 text-orange-600 font-semibold hover:underline">
+          BACA SELENGKAPNYA →
+        </a>
+      </div>
+
+      <!-- LAYANAN 2 -->
+      <div class="p-7 bg-gray-50 border border-gray-200 shadow-sm hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">
+          Penyewaan High Pressure Pump
+        </h3>
+        <p class="text-gray-700 leading-relaxed">
+          Menyediakan berbagai unit pompa tekanan tinggi siap pakai
+          untuk kebutuhan operasional lapangan Anda.
+        </p>
+        <a href="#" class="block mt-4 text-orange-600 font-semibold hover:underline">
+          BACA SELENGKAPNYA →
+        </a>
+      </div>
+
+      <!-- LAYANAN 3 -->
+      <div class="p-7 bg-gray-50 border border-gray-200 shadow-sm hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">
+          Pemasangan & Servis Selang Hidrolik
+        </h3>
+        <p class="text-gray-700 leading-relaxed">
+          Tim profesional dengan pengalaman lebih dari 10 tahun menyediakan
+          layanan pemasangan dan servis selang hidrolik.
+        </p>
+        <a href="#" class="block mt-4 text-orange-600 font-semibold hover:underline">
+          BACA SELENGKAPNYA →
+        </a>
+      </div>
+
+      <!-- LAYANAN 4 -->
+      <div class="p-7 bg-gray-50 border border-gray-200 shadow-sm hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">
+          Penjualan Suku Cadang Pompa
+        </h3>
+        <p class="text-gray-700 leading-relaxed">
+          Menyediakan berbagai suku cadang untuk Detroit Diesel, Caterpillar,
+          dan komponen pompa lainnya dengan kualitas terjamin.
+        </p>
+        <a href="#" class="block mt-4 text-orange-600 font-semibold hover:underline">
+          BACA SELENGKAPNYA →
+        </a>
+      </div>
+
+      <!-- LAYANAN 5 -->
+      <div class="p-7 bg-gray-50 border border-gray-200 shadow-sm hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">
+          Engineering & Konsultasi Teknis
+        </h3>
+        <p class="text-gray-700 leading-relaxed">
+          Konsultasi instalasi, troubleshooting, dan pengoptimalan sistem pompa.
+        </p>
+        <a href="#" class="block mt-4 text-orange-600 font-semibold hover:underline">
+          BACA SELENGKAPNYA →
+        </a>
+      </div>
+
+      <!-- LAYANAN 6 -->
+      <div class="p-7 bg-gray-50 border border-gray-200 shadow-sm hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">
+          Maintenance & Servis Berkala
+        </h3>
+        <p class="text-gray-700 leading-relaxed">
+          Pemeriksaan dan perawatan rutin untuk memastikan pompa Anda
+          selalu dalam kondisi optimal.
+        </p>
+        <a href="#" class="block mt-4 text-orange-600 font-semibold hover:underline">
+          BACA SELENGKAPNYA →
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION: DESKRIPSI TAMBAHAN -->
+  <section class="py-16 bg-white">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-semibold text-gray-900 mb-6">
+        Solusi Terbaik untuk Kebutuhan Pompa Tekanan Tinggi
+      </h2>
+      <p class="text-gray-700 leading-relaxed text-lg">
+        Dengan pengalaman lebih dari 10 tahun, kami telah dipercaya oleh banyak perusahaan dalam
+        penyediaan layanan pompa tekanan tinggi. Kami bekerja profesional, tepat waktu, dan sesuai standar industri.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA HUBUNGI KAMI -->
+  <section class="py-16 bg-orange-600">
+    <div class="max-w-4xl mx-auto text-center text-white px-6">
+      <h2 class="text-3xl font-semibold mb-4">
+        Butuh Bantuan atau Konsultasi?
+      </h2>
+      <p class="mb-6 text-white/90">
+        Tim kami siap membantu Anda untuk menemukan solusi terbaik.
+      </p>
+      <a
+        href="kontak.html"
+        class="inline-block bg-white text-orange-600 font-semibold px-8 py-3 rounded shadow hover:bg-gray-100 transition"
+      >
+        HUBUNGI KAMI
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-900 text-white py-12">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-10">
+
+      <!-- Logo + deskripsi -->
+      <div>
+        <img src="logo.png" class="h-14 mb-4" alt="">
+        <p class="text-gray-300">
+          PT. Infotam Findo — Solusi pompa tekanan tinggi profesional, terpercaya, dan berkualitas.
+        </p>
+      </div>
+
+      <!-- Menu -->
+      <div>
+        <h4 class="text-lg font-semibold mb-4">Menu</h4>
+        <ul class="space-y-2 text-gray-300">
+          <li><a href="index.html" class="hover:text-orange-400">Beranda</a></li>
+          <li><a href="tentang.html" class="hover:text-orange-400">Tentang</a></li>
+          <li><a href="layanan.html" class="hover:text-orange-400">Layanan</a></li>
+          <li><a href="produk.html" class="hover:text-orange-400">Produk</a></li>
+          <li><a href="kontak.html" class="hover:text-orange-400">Kontak</a></li>
+        </ul>
+      </div>
+
+      <!-- Kontak -->
+      <div>
+        <h4 class="text-lg font-semibold mb-4">Kontak</h4>
+        <p class="text-gray-300">Email: info@infotamfindo.com</p>
+        <p class="text-gray-300">Telp: +62 812-3456-7890</p>
+        <p class="text-gray-300">Alamat: Jakarta, Indonesia</p>
+      </div>
+
+    </div>
+
+    <div class="text-center text-gray-400 mt-10 text-sm">
+      © 2025 INFOTAMFINDO. All Rights Reserved.
+    </div>
+  </footer>
+
+</body>
+</html>

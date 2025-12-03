@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BAROKATUL ILMU | Pondok Pesantren Modern</title>
+    <!-- Memuat Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Memuat Icon Lucide (digunakan untuk navigasi dan elemen UI) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Menggunakan font Inter secara default */
+        html { font-family: 'Inter', sans-serif; }
+        
+        /* Definisi Warna Kustom yang Disesuaikan dengan Website Asli */
+        /* Hijau Utama Pondok (Zaitun/Moss Green - Warna Top Bar & Footer) */
+        .bg-pondok-dark { background-color: #557533; } 
+        .text-pondok-dark { color: #557533; } 
+        /* Hijau Logo/Link Aktif (Hijau yang lebih terang/muda - Warna Logo & Hover) */
+        .text-pondok-green { color: #1a6845; } 
+
+        /* Gaya Khusus untuk Navigasi */
+        .nav-link.active {
+            color: #1a6845; 
+            font-weight: 600;
+        }
+
+        /* Gaya untuk kartu di bagian informasi utama */
+        .card-shadow {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Gaya khusus untuk alur PSB (Replikasi Visual Penuh dari Gambar) */
+        #psb-flow-container {
+            /* Warna latar gradien sesuai gambar (Biru-Hijau) */
+            background: linear-gradient(135deg, rgba(26,104,69,0.9) 0%, rgba(0,123,255,0.7) 100%);
+            border-radius: 16px;
+            /* Logo besar di latar belakang (simulasi) */
+            background-image: url("https://placehold.co/1000x500/1a6845/ffffff?text=LOGO+PONDOK+BESAR");
+            background-size: cover;
+            background-position: center;
+        }
+        .psb-step-card {
+            /* Kartu langkah-langkah PSB */
+            background-color: white; 
+            border: 2px solid #557533; /* Border hijau zaitun */
+        }
+        .step-number {
+            /* Angka langkah */
+            color: white; /* Angka putih */
+            border: 2px solid #557533;
+            /* Lingkaran dengan warna gradien di belakang angka */
+            background: linear-gradient(45deg, #1a6845, #557533); 
+        }
+
+        /* Custom Styles for Footer */
+        .footer-link {
+            transition: color 0.15s;
+        }
+        .footer-link:hover {
+            color: #a5d6a7; /* Warna lebih cerah saat hover di footer gelap */
+        }
+    </style>
+    <script>
+        // Fungsi navigasi untuk beralih halaman (menggunakan hidden class)
+        function navigateTo(pageId) {
+            const pages = ['home', 'psb', 'kegiatan', 'kontak', 'berita'];
+            
+            // Sembunyikan semua halaman
+            pages.forEach(id => {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.classList.add('hidden');
+                }
+            });
+
+            // Tampilkan halaman target
+            const targetPage = document.getElementById(pageId);
+            if (targetPage) {
+                targetPage.classList.remove('hidden');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            // Update status link aktif di navbar
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.classList.remove('active', 'font-semibold', 'text-pondok-green', 'border-b-2', 'border-pondok-green');
+                link.classList.add('text-gray-600', 'hover:text-pondok-green');
+
+                if (link.dataset.page === pageId) {
+                    link.classList.add('active', 'text-pondok-green', 'border-b-2', 'border-pondok-green');
+                }
+            });
+            
+            // Tutup menu mobile jika sedang terbuka
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                toggleMobileMenu();
+            }
+        }
+
+        // Fungsi untuk toggle menu mobile
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const button = document.getElementById('menu-button');
+            const isExpanded = button.getAttribute('aria-expanded') === 'true';
+            
+            menu.classList.toggle('hidden');
+            button.setAttribute('aria-expanded', !isExpanded);
+        }
+
+        // Inisialisasi: Halaman Beranda aktif saat dimuat
+        document.addEventListener('DOMContentLoaded', () => {
+            navigateTo('home');
+            const menuButton = document.getElementById('menu-button');
+            if (menuButton) {
+                menuButton.addEventListener('click', toggleMobileMenu);
+            }
+            // Inisialisasi ikon Lucide
+            lucide.createIcons();
+        });
+
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-700">
+
+    <!-- Header & Navbar Sticky -->
+    <header class="shadow-md bg-white sticky top-0 z-50">
+        
+        <!-- Top Bar (Hijau Zaitun - Sesuai Gambar) -->
+        <div class="bg-pondok-dark text-white text-xs font-light">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-2">
+                <!-- Perhatikan Hari/Tanggal di Situs Asli -->
+                <span class="hidden md:block">Kamis, 27 Nov 2025</span> 
+                <span class="text-center md:text-left flex-grow">Informasi penting terkini - Bagian Informasi Pondok</span>
+                
+                <!-- Search & Post (Sesuai Gambar) -->
+                <div class="hidden lg:flex items-center space-x-3 text-sm">
+                    <div class="relative flex items-center">
+                        <!-- Input Cari Sesuatu (warna cream sesuai gambar) -->
+                        <input type="text" placeholder="cari sesuatu..." class="text-gray-800 px-3 py-1 text-xs rounded-l-full focus:outline-none bg-gray-100 w-32">
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 text-xs">Post</span>
+                        <button class="bg-gray-100 rounded-r-full h-full px-3 text-gray-500 hover:text-pondok-dark">
+                            <i data-lucide="search" class="w-4 h-4 text-pondok-dark"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Nav Bar -->
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- Logo Pondok (Termasuk Tulisan Arab/Jawi Sesuai Gambar) -->
+            <div class="flex items-center space-x-2">
+                <!-- Simbol Logo Placeholder -->
+                <div class="w-10 h-10 bg-pondok-dark rounded-full flex items-center justify-center">
+                    <i data-lucide="book-open" class="w-6 h-6 text-white"></i>
+                </div>
+                <a href="#" class="text-xl font-extrabold text-pondok-green" onclick="navigateTo('home'); return false;">
+                    <span class="text-xs block leading-none text-gray-600">معهد بركة العلم</span>
+                    PONDOK PESANTREN<br>
+                    <span class="text-base text-gray-800">BAROKAH ILMU</span>
+                </a>
+            </div>
+
+            <!-- Navigasi Desktop (Mereplikasi Struktur Asli) -->
+            <nav class="hidden md:flex space-x-4 lg:space-x-8 text-sm font-medium h-full items-center">
+                <a href="#" data-page="home" class="nav-link py-2 transition duration-150 text-gray-600 hover:text-pondok-green" onclick="navigateTo('home'); return false;">Beranda</a>
+                <a href="#" data-page="psb" class="nav-link py-2 transition duration-150 text-gray-600 hover:text-pondok-green" onclick="navigateTo('psb'); return false;">Tentang Kami</a>
+                <!-- Link dengan Ikon Plus (Implikasi Menu Dropdown di situs asli) -->
+                <div class="relative group">
+                    <a href="#" class="flex items-center space-x-1 py-2 text-gray-600 hover:text-pondok-green"><i data-lucide="plus" class="w-3 h-3 text-pondok-green"></i> <span>Peluang Sedekah Jariyah</span></a>
+                </div>
+                <a href="#" data-page="kontak" class="nav-link py-2 transition duration-150 text-gray-600 hover:text-pondok-green" onclick="navigateTo('kontak'); return false;">Hubungi Kami</a>
+                <a href="#" data-page="kegiatan" class="nav-link py-2 transition duration-150 text-gray-600 hover:text-pondok-green" onclick="navigateTo('kegiatan'); return false;">Santri Baru 2025</a>
+                <a href="#" data-page="berita" class="nav-link py-2 transition duration-150 text-gray-600 hover:text-pondok-green" onclick="navigateTo('berita'); return false;">Blog Kajian</a>
+            </nav>
+
+            <!-- Tombol Menu Mobile -->
+            <button id="menu-button" type="button" class="md:hidden text-pondok-dark hover:text-pondok-green focus:outline-none" aria-expanded="false" aria-controls="mobile-menu">
+                <i data-lucide="menu" class="w-7 h-7"></i>
+            </button>
+        </div>
+
+        <!-- Menu Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center bg-gray-100 border-t">
+                <a href="#" data-page="home" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-pondok-dark hover:bg-gray-200" onclick="navigateTo('home'); return false;">Beranda</a>
+                <a href="#" data-page="psb" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-pondok-dark hover:bg-gray-200" onclick="navigateTo('psb'); return false;">Tentang Kami</a>
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-pondok-dark hover:bg-gray-200">Peluang Sedekah Jariyah</a>
+                <a href="#" data-page="kontak" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-pondok-dark hover:bg-gray-200" onclick="navigateTo('kontak'); return false;">Hubungi Kami</a>
+                <a href="#" data-page="kegiatan" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-pondok-dark hover:bg-gray-200" onclick="navigateTo('kegiatan'); return false;">Santri Baru 2025</a>
+                <a href="#" data-page="berita" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-pondok-dark hover:bg-gray-200" onclick="navigateTo('berita'); return false;">Blog Kajian</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Konten Halaman -->
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 min-h-[70vh]">
+        
+        <!-- ============================================== -->
+        <!-- 1. Halaman BERANDA (HOME) -->
+        <!-- ============================================== -->
+        <section id="home" class="space-y-12">
+            
+            <!-- Banner Utama PSB (Replikasi Penuh dari Gambar) -->
+            <div id="psb-flow-container" class="relative p-6 md:p-16 text-white text-center shadow-xl overflow-hidden rounded-xl">
+                <div class="relative z-10 space-y-4">
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight">
+                        Alur Pendaftaran PSB 2026-2027
+                    </h1>
+                    <p class="text-xl font-light">
+                        PONPES BAROKAH ILMU TINGKAT TK- SDI - SMP - SMA
+                    </p>
+                    <a href="#" onclick="navigateTo('psb'); return false;" class="inline-block bg-white text-pondok-dark font-bold px-8 py-3 rounded-full text-lg shadow-xl hover:bg-gray-100 transition duration-300 transform hover:scale-[1.02]">
+                        LIHAT ALUR LENGKAP
+                    </a>
+                </div>
+            </div>
+
+            <!-- Info Pondok & Status PSB Card (Sesuai Gambar Scroll) -->
+            <div class="grid lg:grid-cols-3 gap-6">
+                <!-- Info Utama Pondok & Kontak Kiri (2/3) -->
+                <div class="lg:col-span-2 bg-white p-6 rounded-xl card-shadow border border-gray-100 space-y-4">
+                    <h2 class="text-2xl font-bold text-pondok-green mb-3">PONDOK PESANTREN BAROKATUL ILMU</h2>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex items-start space-x-3">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-pondok-dark flex-shrink-0"></i>
+                            <p class="text-gray-600">
+                                Jl. Komplek Permata, Desa Margorejo RT. 001/001, Kec. Klatak, Tamanan, Kab. Bondowoso, Jawa Timur.
+                            </p>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4 pt-2">
+                            <div class="flex items-center space-x-3">
+                                <i data-lucide="phone" class="w-5 h-5 text-pondok-dark flex-shrink-0"></i>
+                                <p class="text-gray-600">(087) 711-769-013</p>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i data-lucide="mail" class="w-5 h-5 text-pondok-dark flex-shrink-0"></i>
+                                <p class="text-gray-600">info@barokahilmu.id</p>
+                            </div>
+                        </div>
+                        <!-- Sosial Media (Sesuai Replika) -->
+                        <div class="flex space-x-3 pt-3">
+                            <a href="#" class="text-pondok-dark hover:text-pondok-green"><i data-lucide="facebook" class="w-6 h-6"></i></a>
+                            <a href="#" class="text-pondok-dark hover:text-pondok-green"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+                            <a href="#" class="text-pondok-dark hover:text-pondok-green"><i data-lucide="youtube" class="w-6 h-6"></i></a>
+                            <a href="#" class="text-pondok-dark hover:text-pondok-green"><i data-lucide="mail" class="w-6 h-6"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PSB Status Card Kanan (1/3 - Replikasi desain hijau zaitun) -->
+                <div class="lg:col-span-1 p-6 rounded-xl card-shadow bg-pondok-dark text-white flex flex-col justify-center items-center text-center">
+                    <h3 class="text-xl font-bold mb-2">PSB DIBUKA</h3>
+                    <p class="text-sm font-light mb-4">
+                        TA 2026-2027.
+                    </p>
+                    <a href="#" onclick="navigateTo('psb'); return false;" class="bg-white text-pondok-dark px-5 py-2 rounded-full text-sm font-semibold hover:bg-gray-200 transition duration-300 shadow-md">
+                        Ayo Daftar
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Quotes/Motto (Sesuai Gambar Scroll) -->
+            <div class="text-center py-8">
+                <blockquote class="text-xl italic font-serif text-gray-700">
+                    "...dan tidaklah sama orang yang mengetahui dengan orang yang tidak mengetahui."
+                </blockquote>
+                <p class="mt-4 text-sm font-medium text-pondok-green">- (QS. Az-Zumar: 9)</p>
+            </div>
+
+            <!-- Kegiatan & Galeri Preview -->
+            <div class="space-y-8">
+                <h2 class="text-3xl font-bold text-center text-gray-800">
+                    KEGIATAN & GALERI
+                    <div class="w-20 h-1 bg-pondok-green mx-auto mt-2 rounded-full"></div>
+                </h2>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Kartu Kegiatan 1 -->
+                    <div class="bg-white rounded-xl card-shadow overflow-hidden hover:shadow-xl transition duration-300">
+                        <img src="https://placehold.co/600x400/1a6845/ffffff?text=Hafalan+Quran" alt="Kegiatan Hafalan Quran" class="w-full h-40 object-cover">
+                        <div class="p-4">
+                            <h4 class="font-semibold text-lg text-gray-800">Hafalan Al-Quran</h4>
+                            <p class="text-sm text-gray-500">Program unggulan santri setiap subuh dan malam.</p>
+                        </div>
+                    </div>
+                    <!-- Kartu Kegiatan 2 -->
+                    <div class="bg-white rounded-xl card-shadow overflow-hidden hover:shadow-xl transition duration-300">
+                        <img src="https://placehold.co/600x400/007bff/ffffff?text=Kajian+Kitab" alt="Kegiatan Kajian Kitab" class="w-full h-40 object-cover">
+                        <div class="p-4">
+                            <h4 class="font-semibold text-lg text-gray-800">Kajian Kitab Kuning</h4>
+                            <p class="text-sm text-gray-500">Pemahaman mendalam tentang ilmu fiqih dan tauhid.</p>
+                        </div>
+                    </div>
+                    <!-- Kartu Kegiatan 3 -->
+                    <div class="bg-white rounded-xl card-shadow overflow-hidden hover:shadow-xl transition duration-300">
+                        <img src="https://placehold.co/600x400/6c757d/ffffff?text=Ekstrakurikuler" alt="Kegiatan Ekstrakurikuler" class="w-full h-40 object-cover">
+                        <div class="p-4">
+                            <h4 class="font-semibold text-lg text-gray-800">Ekstrakurikuler</h4>
+                            <p class="text-sm text-gray-500">Pramuka, Olahraga, dan Seni Kaligrafi.</p>
+                        </div>
+                    </div>
+                    <!-- Kartu Galeri -->
+                    <div class="bg-white rounded-xl card-shadow overflow-hidden hover:shadow-xl transition duration-300">
+                        <img src="https://placehold.co/600x400/ffc107/343a40?text=Lingkungan+Pondok" alt="Galeri Lingkungan Pondok" class="w-full h-40 object-cover">
+                        <div class="p-4">
+                            <h4 class="font-semibold text-lg text-gray-800">Kunjungi Galeri Kami</h4>
+                            <p class="text-sm text-gray-500">Lihat seluruh fasilitas dan suasana pondok.</p>
+                            <a href="#" onclick="navigateTo('kegiatan'); return false;" class="text-pondok-green text-sm mt-2 block font-medium hover:underline">Lihat Semua &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Section (Sesuai Gambar Scroll) -->
+            <div class="space-y-8 pt-8">
+                <h2 class="text-3xl font-bold text-center text-gray-800">
+                    VIDEO TERBARU
+                    <div class="w-20 h-1 bg-pondok-dark mx-auto mt-2 rounded-full"></div>
+                </h2>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <!-- Video 1 Placeholder -->
+                    <div class="rounded-xl shadow-lg overflow-hidden bg-gray-200 aspect-video flex items-center justify-center">
+                        <i data-lucide="youtube" class="w-12 h-12 text-red-600 opacity-80"></i>
+                        <span class="ml-2 text-gray-700 text-sm">Pendidikan di Masa Digital</span>
+                    </div>
+                    <!-- Video 2 Placeholder -->
+                    <div class="rounded-xl shadow-lg overflow-hidden bg-gray-200 aspect-video flex items-center justify-center">
+                        <i data-lucide="youtube" class="w-12 h-12 text-red-600 opacity-80"></i>
+                        <span class="ml-2 text-gray-700 text-sm">Faidah Harian</span>
+                    </div>
+                    <!-- Video 3 Placeholder -->
+                    <div class="rounded-xl shadow-lg overflow-hidden bg-gray-200 aspect-video flex items-center justify-center">
+                        <i data-lucide="youtube" class="w-12 h-12 text-red-600 opacity-80"></i>
+                        <span class="ml-2 text-gray-700 text-sm">Hafalan Al-Quran Santri</span>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ============================================== -->
+        <!-- 2. Halaman PSB 2026-2027 (PENDAFTARAN) - REPLIKASI DETAIL VISUAL ALUR -->
+        <!-- ============================================== -->
+        <section id="psb" class="hidden space-y-10 py-6">
+            <h1 class="text-4xl font-extrabold text-center text-pondok-green">Pendaftaran Santri Baru (PSB) 2026-2027</h1>
+            <p class="text-center text-lg text-gray-600">Panduan lengkap, jadwal, dan persyaratan untuk calon santri Pondok Pesantren Barokah Ilmu.</p>
+
+            <!-- Alur Pendaftaran (Visual Replikasi Penuh dari Gambar) -->
+            <div id="psb-flow-container" class="p-8 md:p-12 shadow-2xl relative">
+                <div class="relative z-10 text-white space-y-10">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-center tracking-tight">
+                        ALUR PENDAFTARAN PSB 2026-2027
+                        <br><span class="text-xl font-normal">PONPES BAROKAH ILMU TINGKAT TK- SDI - SMP - SMA</span>
+                    </h2>
+
+                    <!-- Kartu Alur Pendaftaran (Menggunakan Ikon Sederhana sebagai pengganti ikon ilustrasi di gambar) -->
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
+                        
+                        <!-- Step 1: Hubungi Admin -->
+                        <div class="psb-step-card p-5 rounded-xl text-gray-800 shadow-xl transition hover:scale-[1.03] flex flex-col items-center">
+                            <div class="step-number flex items-center justify-center w-12 h-12 rounded-full text-xl font-bold mb-3">01</div>
+                            <h3 class="font-bold text-lg text-pondok-green mb-2">HUBUNGI ADMIN</h3>
+                            <div class="text-sm font-semibold space-y-1">
+                                <p>0812-8002-3637</p>
+                                <p>0821-1117-6513</p>
+                            </div>
+                            <i data-lucide="phone-call" class="w-10 h-10 mt-3 text-pondok-dark"></i>
+                        </div>
+
+                        <!-- Step 2: Transfer Pendaftaran -->
+                        <div class="psb-step-card p-5 rounded-xl text-gray-800 shadow-xl transition hover:scale-[1.03] flex flex-col items-center">
+                            <div class="step-number flex items-center justify-center w-12 h-12 rounded-full text-xl font-bold mb-3">02</div>
+                            <h3 class="font-bold text-lg text-pondok-green mb-2">TRANSFER PENDAFTARAN</h3>
+                            <div class="text-sm font-semibold space-y-1">
+                                <p>BSI: 712-3075-905</p>
+                                <p>A.N. YYSN BAROKAH ILMU MARUNDA</p>
+                                <p class="text-xs font-normal text-red-600">KODE TRANSFER: 451</p>
+                            </div>
+                            <i data-lucide="credit-card" class="w-10 h-10 mt-3 text-pondok-dark"></i>
+                        </div>
+
+                        <!-- Step 3: Mengisi Formulir -->
+                        <div class="psb-step-card p-5 rounded-xl text-gray-800 shadow-xl transition hover:scale-[1.03] flex flex-col items-center">
+                            <div class="step-number flex items-center justify-center w-12 h-12 rounded-full text-xl font-bold mb-3">03</div>
+                            <h3 class="font-bold text-lg text-pondok-green mb-2">MENGISI FORMULIR</h3>
+                            <p class="text-sm text-gray-600 text-center">
+                                Formulir akan dibagikan setelah melakukan pembayaran pendaftaran.
+                            </p>
+                            <i data-lucide="form-input" class="w-10 h-10 mt-3 text-pondok-dark"></i>
+                        </div>
+
+                        <!-- Step 4: Konfirmasi Ulang -->
+                        <div class="psb-step-card p-5 rounded-xl text-gray-800 shadow-xl transition hover:scale-[1.03] flex flex-col items-center">
+                            <div class="step-number flex items-center justify-center w-12 h-12 rounded-full text-xl font-bold mb-3">04</div>
+                            <h3 class="font-bold text-lg text-pondok-green mb-2">KONFIRMASI ULANG</h3>
+                            <p class="text-sm text-gray-600 text-center">
+                                Ke admin setelah selesai melakukan pengisian formulir.
+                            </p>
+                            <i data-lucide="check-circle" class="w-10 h-10 mt-3 text-pondok-dark"></i>
+                        </div>
+
+                        <!-- Step 5: Masuk Grup Calon Santri -->
+                        <div class="psb-step-card p-5 rounded-xl text-gray-800 shadow-xl transition hover:scale-[1.03] flex flex-col items-center">
+                            <div class="step-number flex items-center justify-center w-12 h-12 rounded-full text-xl font-bold mb-3">05</div>
+                            <h3 class="font-bold text-lg text-pondok-green mb-2">MASUK GRUP CALON SANTRI</h3>
+                            <p class="text-sm text-gray-600 text-center">
+                                Calon santri akan di-invite ke grup resmi Pondok.
+                            </p>
+                            <i data-lucide="users" class="w-10 h-10 mt-3 text-pondok-dark"></i>
+                        </div>
+
+                        <!-- Step 6: Menanti Informasi Lanjut -->
+                        <div class="psb-step-card p-5 rounded-xl text-gray-800 shadow-xl transition hover:scale-[1.03] flex flex-col items-center">
+                            <div class="step-number flex items-center justify-center w-12 h-12 rounded-full text-xl font-bold mb-3">06</div>
+                            <h3 class="font-bold text-lg text-pondok-green mb-2">INFORMASI LANJUT</h3>
+                            <p class="text-sm text-gray-600 text-center">
+                                Menanti informasi via grup calon santri baru.
+                            </p>
+                            <i data-lucide="megaphone" class="w-10 h-10 mt-3 text-pondok-dark"></i>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Jadwal dan Biaya -->
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Jadwal -->
+                <div class="bg-white p-6 rounded-xl card-shadow border-l-4 border-pondok-dark">
+                    <h2 class="text-2xl font-bold text-pondok-dark mb-4 flex items-center"><i data-lucide="calendar-check" class="w-6 h-6 mr-2"></i> Jadwal Penting</h2>
+                    <ul class="space-y-3 text-gray-700 text-sm">
+                        <li class="flex justify-between border-b border-dashed pb-2"><span>Pendaftaran Dibuka</span><span class="font-semibold text-pondok-green">01 Nov 2025</span></li>
+                        <li class="flex justify-between border-b border-dashed pb-2"><span>Batas Akhir Pendaftaran</span><span class="font-semibold text-pondok-green">31 Jan 2026</span></li>
+                        <li class="flex justify-between border-b border-dashed pb-2"><span>Tes Seleksi</span><span class="font-semibold text-pondok-green">07 Feb 2026</span></li>
+                        <li class="flex justify-between pb-2"><span>Pengumuman Kelulusan</span><span class="font-semibold text-pondok-green">14 Feb 2026</span></li>
+                    </ul>
+                </div>
+
+                <!-- Biaya -->
+                <div class="bg-white p-6 rounded-xl card-shadow border-l-4 border-pondok-dark">
+                    <h2 class="text-2xl font-bold text-pondok-dark mb-4 flex items-center"><i data-lucide="wallet" class="w-6 h-6 mr-2"></i> Rincian Biaya Awal</h2>
+                    <table class="min-w-full text-left text-gray-700 text-sm">
+                        <tbody>
+                            <tr>
+                                <td class="py-1">Biaya Pendaftaran</td>
+                                <td class="py-1 text-right font-semibold">Rp 300.000</td>
+                            </tr>
+                            <tr>
+                                <td class="py-1">Uang Pangkal (Sekali Bayar)</td>
+                                <td class="py-1 text-right font-semibold">Rp 3.500.000</td>
+                            </tr>
+                            <tr>
+                                <td class="py-1">SPP Bulan Pertama</td>
+                                <td class="py-1 text-right font-semibold">Rp 500.000</td>
+                            </tr>
+                            <tr class="font-bold border-t-2 border-pondok-dark">
+                                <td class="py-2 text-lg text-pondok-dark">Total Awal</td>
+                                <td class="py-2 text-lg text-pondok-dark text-right">Rp 4.300.000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Formulir Pendaftaran (Placeholder) -->
+            <div class="bg-white p-8 rounded-xl card-shadow border-t-4 border-pondok-green">
+                <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">FORMULIR PENDAFTARAN</h2>
+                <div class="text-center text-gray-500 italic">
+                    <p>Formulir pendaftaran akan tersedia di sini atau dibagikan oleh admin setelah pembayaran biaya pendaftaran dikonfirmasi.</p>
+                    <button class="mt-4 bg-pondok-dark text-white px-6 py-3 rounded-lg hover:bg-pondok-green transition duration-300 shadow-md">
+                        Hubungi Admin Sekarang
+                    </button>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ============================================== -->
+        <!-- 3. Halaman KEGIATAN & GALERI (Placeholder) -->
+        <!-- ============================================== -->
+        <section id="kegiatan" class="hidden space-y-10 py-6">
+            <h1 class="text-4xl font-extrabold text-center text-pondok-green">Kegiatan Santri & Galeri</h1>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="md:col-span-2 space-y-6">
+                    <div class="bg-white p-6 rounded-xl card-shadow">
+                        <h2 class="text-2xl font-bold text-pondok-dark mb-3">Program Unggulan Tahfidz</h2>
+                        <p class="text-gray-600">Fokus utama pendidikan di Barokah Ilmu adalah pada hafalan dan pemahaman Al-Qur'an serta Hadits. Santri memiliki sesi wajib setiap pagi dan malam.</p>
+                        <img src="https://placehold.co/800x400/557533/ffffff?text=Tahfidz+Program" alt="Tahfidz Program" class="mt-4 w-full rounded-lg object-cover">
+                    </div>
+                    <div class="bg-white p-6 rounded-xl card-shadow">
+                        <h2 class="text-2xl font-bold text-pondok-dark mb-3">Kegiatan Ekstrakurikuler</h2>
+                        <p class="text-gray-600">Kami menawarkan berbagai kegiatan untuk mengembangkan potensi non-akademik, termasuk panahan, pidato 3 bahasa, dan pelatihan jurnalistik.</p>
+                        <div class="grid grid-cols-2 gap-4 mt-4">
+                            <img src="https://placehold.co/400x300/1a6845/ffffff?text=Panahan" alt="Panahan" class="rounded-lg object-cover">
+                            <img src="https://placehold.co/400x300/007bff/ffffff?text=Pidato" alt="Pidato" class="rounded-lg object-cover">
+                        </div>
+                    </div>
+                </div>
+                <div class="md:col-span-1 bg-white p-6 rounded-xl card-shadow border-t-4 border-pondok-dark h-fit">
+                    <h3 class="font-bold text-xl mb-4 text-pondok-dark">Fasilitas Pondok</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-center space-x-2"><i data-lucide="check" class="w-4 h-4 text-pondok-green"></i><span>Asrama Putra/Putri</span></li>
+                        <li class="flex items-center space-x-2"><i data-lucide="check" class="w-4 h-4 text-pondok-green"></i><span>Masjid Jami'</span></li>
+                        <li class="flex items-center space-x-2"><i data-lucide="check" class="w-4 h-4 text-pondok-green"></i><span>Ruang Belajar Full AC</span></li>
+                        <li class="flex items-center space-x-2"><i data-lucide="check" class="w-4 h-4 text-pondok-green"></i><span>Lapangan Olahraga</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================== -->
+        <!-- 4. Halaman KONTAK (Placeholder) -->
+        <!-- ============================================== -->
+        <section id="kontak" class="hidden space-y-10 py-6">
+            <h1 class="text-4xl font-extrabold text-center text-pondok-green">Hubungi Kami</h1>
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Kontak Informasi -->
+                <div class="md:col-span-1 space-y-6">
+                    <div class="bg-white p-6 rounded-xl card-shadow border-l-4 border-pondok-dark">
+                        <h3 class="font-bold text-lg mb-2 text-pondok-dark">Alamat Pondok</h3>
+                        <p class="text-sm text-gray-700">Jl. Komplek Permata, Desa Margorejo RT. 001/001, Kec. Klatak, Tamanan, Kab. Bondowoso, Jawa Timur.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl card-shadow border-l-4 border-pondok-dark">
+                        <h3 class="font-bold text-lg mb-2 text-pondok-dark">Nomor Kontak</h3>
+                        <p class="text-sm text-gray-700">Telp: (087) 711-769-013<br>WhatsApp PSB: 0812-8002-3637</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl card-shadow border-l-4 border-pondok-dark">
+                        <h3 class="font-bold text-lg mb-2 text-pondok-dark">Email Resmi</h3>
+                        <p class="text-sm text-gray-700">info@barokahilmu.id</p>
+                    </div>
+                </div>
+
+                <!-- Formulir Kontak -->
+                <div class="md:col-span-2 bg-white p-8 rounded-xl card-shadow border-t-4 border-pondok-green">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6">Kirim Pesan Kepada Kami</h2>
+                    <form class="space-y-4">
+                        <div>
+                            <label for="nama" class="block text-sm font-medium text-gray-700">Nama Lengkap</label>
+                            <input type="text" id="nama" name="nama" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-pondok-green focus:ring-pondok-green p-2 border">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                            <input type="email" id="email" name="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-pondok-green focus:ring-pondok-green p-2 border">
+                        </div>
+                        <div>
+                            <label for="pesan" class="block text-sm font-medium text-gray-700">Pesan Anda</label>
+                            <textarea id="pesan" name="pesan" rows="4" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-pondok-green focus:ring-pondok-green p-2 border"></textarea>
+                        </div>
+                        <button type="submit" class="bg-pondok-dark text-white px-6 py-3 rounded-lg hover:bg-pondok-green transition duration-300 shadow-md">
+                            Kirim Pesan
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ============================================== -->
+        <!-- 5. Halaman BERITA/BLOG (Placeholder - Replikasi Sederhana Sidebar) -->
+        <!-- ============================================== -->
+        <section id="berita" class="hidden space-y-10 py-6">
+            <h1 class="text-4xl font-extrabold text-center text-pondok-green mb-8">Blog Kajian & Berita</h1>
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Konten Utama Blog (2/3) -->
+                <div class="lg:col-span-2 space-y-6">
+                    <!-- Artikel 1 -->
+                    <article class="bg-white p-6 rounded-xl card-shadow">
+                        <h2 class="text-2xl font-bold text-pondok-dark hover:text-pondok-green cursor-pointer">Pentingnya Sanad dalam Menuntut Ilmu Agama</h2>
+                        <p class="text-sm text-gray-500 mt-1 mb-3">Ditulis oleh Admin | 20 November 2025 | Kajian Fiqih</p>
+                        <img src="https://placehold.co/800x400/1a6845/ffffff?text=Kajian+Ilmu" alt="Kajian Ilmu" class="w-full h-48 object-cover rounded-lg mb-4">
+                        <p class="text-gray-700 leading-relaxed">
+                            Dalam tradisi keilmuan Islam, sanad (rantai periwayatan) memegang peranan krusial. Sanad adalah jaminan otentisitas dan keabsahan ilmu yang diterima, menghubungkan kita langsung kepada sumber aslinya.
+                        </p>
+                        <a href="#" class="text-pondok-green font-medium mt-3 inline-block hover:underline">Baca Selengkapnya &rarr;</a>
+                    </article>
+                    <!-- Artikel 2 -->
+                    <article class="bg-white p-6 rounded-xl card-shadow">
+                        <h2 class="text-2xl font-bold text-pondok-dark hover:text-pondok-green cursor-pointer">Rutin Harian Santri: Dari Tahajjud hingga Khidmah</h2>
+                        <p class="text-sm text-gray-500 mt-1 mb-3">Ditulis oleh Admin | 15 November 2025 | Berita Pondok</p>
+                        <p class="text-gray-700 leading-relaxed">
+                            Kehidupan santri di Barokah Ilmu diatur dengan jadwal yang padat dan terstruktur, memastikan keseimbangan antara ibadah, akademik, dan pengembangan diri...
+                        </p>
+                        <a href="#" class="text-pondok-green font-medium mt-3 inline-block hover:underline">Baca Selengkapnya &rarr;</a>
+                    </article>
+                </div>
+
+                <!-- Sidebar (1/3 - Replikasi desain dari gambar) -->
+                <div class="lg:col-span-1 space-y-6">
+                    <!-- Search Widget -->
+                    <div class="bg-white p-4 rounded-xl card-shadow border-t-4 border-pondok-dark">
+                        <h3 class="font-bold text-lg mb-3 text-pondok-dark">Cari</h3>
+                        <div class="flex">
+                            <input type="text" placeholder="Masukkan kata kunci..." class="w-full rounded-l-md border border-gray-300 p-2 focus:ring-pondok-dark focus:border-pondok-dark text-sm">
+                            <button class="bg-pondok-dark text-white p-2 rounded-r-md hover:bg-pondok-green transition duration-300">Cari</button>
+                        </div>
+                    </div>
+                    <!-- Recent Posts Widget -->
+                    <div class="bg-white p-4 rounded-xl card-shadow border-t-4 border-pondok-dark">
+                        <h3 class="font-bold text-lg mb-3 text-pondok-dark">Recent Posts</h3>
+                        <ul class="space-y-2 text-sm">
+                            <li><a href="#" class="text-gray-700 hover:text-pondok-green footer-link">Adab Bertamu dalam Islam</a></li>
+                            <li><a href="#" class="text-gray-700 hover:text-pondok-green footer-link">Galeri Pembukaan Semester Baru</a></li>
+                            <li><a href="#" class="text-gray-700 hover:text-pondok-green footer-link">Doa-Doa Pilihan Harian</a></li>
+                        </ul>
+                    </div>
+                    <!-- Categories Widget -->
+                    <div class="bg-white p-4 rounded-xl card-shadow border-t-4 border-pondok-dark">
+                        <h3 class="font-bold text-lg mb-3 text-pondok-dark">Categories</h3>
+                        <ul class="space-y-2 text-sm">
+                            <li><a href="#" class="text-gray-700 hover:text-pondok-green footer-link">Kajian Fiqih (5)</a></li>
+                            <li><a href="#" class="text-gray-700 hover:text-pondok-green footer-link">Berita Pondok (12)</a></li>
+                            <li><a href="#" class="text-gray-700 hover:text-pondok-green footer-link">Pengumuman (3)</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================== -->
+        <!-- 6. Placeholder untuk halaman Santri Baru 2025 (KEGIATAN) -->
+        <!-- ============================================== -->
+        <section id="kegiatan" class="hidden space-y-10 py-6">
+            <!-- Konten ini akan menggunakan konten dari bagian "Kegiatan & Galeri" di atas -->
+            <h1 class="text-4xl font-extrabold text-center text-pondok-green">Santri Baru 2025 (Kegiatan & Informasi)</h1>
+            <div class="bg-white p-8 rounded-xl card-shadow border-t-4 border-pondok-green text-center">
+                <p class="text-lg text-gray-700">Selamat datang kepada seluruh calon santri baru 2025! Anda dapat melihat detail kegiatan dan program pondok di sini.</p>
+                <div class="mt-6 inline-flex space-x-4">
+                    <a href="#" onclick="navigateTo('kegiatan'); return false;" class="bg-pondok-dark text-white px-6 py-3 rounded-lg hover:bg-pondok-green transition duration-300 shadow-md">Lihat Galeri Kegiatan</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer (Replikasi Penuh dari Gambar) -->
+    <footer class="bg-gray-800 text-white mt-12">
+        <!-- Footer Atas (Warna Hijau Zaitun Gelap) -->
+        <div class="bg-pondok-dark py-12">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
+                
+                <!-- Kolom 1: Logo & Deskripsi -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2">
+                         <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                            <i data-lucide="book-open" class="w-4 h-4 text-pondok-dark"></i>
+                        </div>
+                        <span class="text-xl font-bold">BAROKAH ILMU</span>
+                    </div>
+                    <p class="text-sm font-light">
+                        Pondok Pesantren Modern yang fokus pada penguatan hafalan Al-Qur'an dan pengkajian kitab-kitab klasik.
+                    </p>
+                    <div class="flex space-x-3 pt-2">
+                        <a href="#" class="text-white hover:text-pondok-green"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                        <a href="#" class="text-white hover:text-pondok-green"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                        <a href="#" class="text-white hover:text-pondok-green"><i data-lucide="youtube" class="w-5 h-5"></i></a>
+                    </div>
+                </div>
+
+                <!-- Kolom 2: Tautan Cepat -->
+                <div class="space-y-3">
+                    <h3 class="text-lg font-semibold border-b border-gray-600 pb-2 mb-2">Tautan Cepat</h3>
+                    <ul class="text-sm space-y-2">
+                        <li><a href="#" onclick="navigateTo('psb'); return false;" class="footer-link">Alur Pendaftaran PSB</a></li>
+                        <li><a href="#" onclick="navigateTo('kegiatan'); return false;" class="footer-link">Galeri Kegiatan</a></li>
+                        <li><a href="#" class="footer-link">Peluang Sedekah Jariyah</a></li>
+                        <li><a href="#" onclick="navigateTo('berita'); return false;" class="footer-link">Blog Kajian</a></li>
+                    </ul>
+                </div>
+
+                <!-- Kolom 3: Kontak Kami -->
+                <div class="space-y-3">
+                    <h3 class="text-lg font-semibold border-b border-gray-600 pb-2 mb-2">Hubungi Kami</h3>
+                    <p class="text-sm space-y-2">
+                        <div class="flex items-start space-x-2"><i data-lucide="map-pin" class="w-4 h-4 mt-1 flex-shrink-0"></i><span>Jl. Komplek Permata, Desa Margorejo RT. 001/001, Kec. Klatak, Tamanan, Kab. Bondowoso, Jawa Timur.</span></div>
+                        <div class="flex items-center space-x-2"><i data-lucide="phone" class="w-4 h-4"></i><span>(087) 711-769-013</span></div>
+                        <div class="flex items-center space-x-2"><i data-lucide="mail" class="w-4 h-4"></i><span>info@barokahilmu.id</span></div>
+                    </p>
+                </div>
+
+                <!-- Kolom 4: Maps (Placeholder) -->
+                <div class="space-y-3">
+                    <h3 class="text-lg font-semibold border-b border-gray-600 pb-2 mb-2">Lokasi Kami</h3>
+                    <div class="bg-gray-700 h-32 rounded-lg flex items-center justify-center text-sm italic">
+                        [Peta Google Maps Placeholder]
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+        <!-- Footer Bawah (Warna Hitam Gelap Sesuai Gambar) -->
+        <div class="bg-gray-900 py-4">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs text-gray-400">
+                &copy; 2025 Pondok Pesantren Barokatul Ilmu. Hak Cipta Dilindungi Undang-Undang.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
