@@ -1,127 +1,262 @@
+<!-- index.html - Tailwind version of infotamfindo.com homepage -->
 <!DOCTYPE html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tentang Kami - Tamfindo</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="font-sans text-gray-700">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tamfindo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="font-sans text-gray-700">
+    <!-- NAV -->
+    <header class="bg-white shadow fixed w-full top-0 z-50">
+      <div
+        class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4"
+      >
+        <!-- LOGO -->
+        <a href="index.html" class="flex items-center gap-3">
+          <img
+            src="../slasing/images/logo2_png (1).webp"
+            class="h-12"
+            alt="logo"
+          />
+        </a>
 
-  <!-- NAVBAR -->
-  <header class="w-full bg-white shadow-sm fixed top-0 left-0 z-50">
-    <div class="max-w-7xl mx-auto flex justify-between items-center py-4 px-4">
-      <img src="logo.png" alt="Logo" class="h-10" />
-      <nav class="space-x-6 text-sm font-medium">
-        <a href="index.html" class="hover:text-orange-500">Beranda</a>
-        <a href="tentang.html" class="border-b-2 border-orange-500 pb-1">Tentang Kami</a>
-        <a href="produk.html" class="hover:text-orange-500">Produk</a>
-        <a href="layanan.html" class="hover:text-orange-500">Layanan</a>
-        <a href="kontak.html" class="hover:text-orange-500">Kontak</a>
-      </nav>
-    </div>
-  </header>
+        <!-- MENU -->
+        <nav class="space-x-6 font-medium text-gray-700 hidden md:block">
+          <a href="index.html" class="hover:text-orange-600">Beranda</a>
+          <a href="tentang.html" class="hover:text-orange-600">Tentang</a>
+          <a href="layanan.html" class="text-orange-600 font-semibold"
+            >Layanan</a
+          >
+          <a href="kontak.html" class="hover:text-orange-600">Kontak</a>
+        </nav>
+      </div>
+    </header>
 
-  <!-- HERO SECTION -->
-  <section class="relative h-[450px] bg-cover bg-center mt-20" style="background-image:url('about-hero.jpg')">
-    <div class="absolute inset-0 bg-black/40"></div>
-    <div class="relative z-10 max-w-5xl mx-auto px-4 pt-32 text-white">
-      <h1 class="text-5xl font-bold mb-4">Tentang Kami</h1>
-      <p class="max-w-xl text-lg leading-relaxed">
-        Dengan pengalaman bertahun-tahun, kami menyediakan peralatan dan layanan
-        berkualitas tinggi untuk kebutuhan perompaan tekanan Anda.
-      </p>
-    </div>
-  </section>
-
-  <!-- PROFIL PERUSAHAAN -->
-  <section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 px-4">
-      <img src="about.jpg" class="rounded shadow-lg w-full object-cover" />
-      <div>
-        <h3 class="text-sm text-orange-600 font-semibold tracking-wider">PT TAMFINDO MITRA MANDIRI</h3>
-        <h2 class="text-4xl font-bold mt-3 mb-5">Profil Perusahaan</h2>
-        <p class="leading-relaxed mb-4">
-          Didirikan di Jakarta-Indonesia pada tahun 2014, Tamfindo memiliki pengalaman
-          bertahun-tahun dalam mendukung peralatan/layanan Pompa Tekanan sebagai bagian
-          dari sektor Minyak & Gas dan panas bumi.
-        </p>
-        <p class="leading-relaxed mb-4">
-          Kompetensi inti kami meliputi fabrikasi/manufaktur, penyewaan, perbaikan, dan
-          pemeliharaan peralatan pompa bertekanan. Kami juga menyediakan solusi lengkap
-          dalam servis dan perbaikan unit pompa seperti unit sementasi, pompa batch,
-          pompa triplex, nitrogen unit, dan unit pipa koil.
-        </p>
-        <p class="leading-relaxed">
-          Kami berkomitmen pada kualitas, kepuasan pelanggan, serta standar operasi yang
-          aman dan efisien.
+    <!-- HERO -->
+    <section
+      class="relative h-[550px] bg-cover bg-center"
+      style="background-image: url('hero.jpg')"
+    >
+      <div class="absolute inset-0 bg-black/40"></div>
+      <div class="max-w-4xl mx-auto relative z-10 pt-40 px-4 text-white">
+        <h1 class="text-4xl font-bold leading-tight">
+          Providing Services & Supporting Equipment<br />for Oil &
+          Gas/Geothermal Sector
+        </h1>
+        <p class="mt-4 max-w-xl">
+          With years of experience, we provide top-quality equipment and
+          services<br />for your pressure pumping requirements.
         </p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- MISI SECTION -->
-  <section class="relative h-[450px] mt-10">
-    <img src="misi.jpg" class="absolute inset-0 w-full h-full object-cover" />
-    <div class="absolute inset-0 bg-black/50"></div>
-    <div class="relative max-w-4xl mx-auto px-4 py-24 text-white">
-      <h2 class="text-4xl font-bold mb-6">MISI</h2>
-      <p class="leading-relaxed mb-4 text-sm">
-        Tujuan utama kami adalah menjadi lebih besar, lebih baik, dan lebih kuat dengan
-        terus menyediakan layanan terbaik kepada pelanggan berharga kami.
-      </p>
-      <p class="leading-relaxed mb-4 text-sm">
-        Kami berusaha untuk menyediakan layanan yang paling andal dan efisien tanpa
-        mengorbankan keselamatan dan kualitas.
-      </p>
-      <p class="leading-relaxed text-sm">
-        Kami ingin membuktikan keterampilan kualitas kami, perbaikan berkelanjutan, dan
-        kepedulian terhadap pelanggan sebagai bagian dari hubungan bisnis jangka panjang.
-      </p>
-    </div>
-  </section>
+    <!-- SECTION: SIAPA KAMI -->
+    <section class="bg-gray-50 py-16">
+      <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 px-4">
+        <img src="../slasing/images/OK.jpg" class="rounded shadow" />
+        <div>
+          <h3 class="text-sm text-orange-600 font-semibold tracking-wider">
+            TENTANG KAMI
+          </h3>
+          <h2 class="text-3xl font-bold mt-2 mb-4">Siapa Kami</h2>
+          <p class="leading-relaxed">
+            Didirikan di Jakarta, Indonesia pada tahun 2014, Tamfindo memiliki
+            pengalaman bertahun-tahun dalam mendukung peralatan/layanan Pompa
+            Tekanan dan sebagai bagian dari sektor Minyak & Gas dan panas bumi.
+          </p>
+          <p class="mt-4 leading-relaxed">
+            Kompetensi inti kami meliputi, namun tidak terbatas pada,
+            fabrikasi/manufaktur, penyewaan, perbaikan, dan pemeliharaan
+            peralatan pompa bertekanan. Kami juga menyediakan solusi lengkap
+            dalam servis dan perbaikan mesin unit pompa (unit sementasi, pompa
+            sentrifugal, mixer batch, pompa tripleks, pompa nitrogen, dan unit
+            pipa koil).
+          </p>
+          <a href="#" class="text-orange-600 font-semibold inline-block mt-4"
+            >TEMUKAN LEBIH BANYAK →</a
+          >
+        </div>
+      </div>
+    </section>
 
-  <!-- APA YANG KAMI LAKUKAN -->
-  <section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 px-4 items-center">
-      <div>
-        <h3 class="text-sm text-orange-600 font-semibold tracking-wider">LAYANAN KAMI</h3>
-        <h2 class="text-4xl font-bold mt-3 mb-5">Apa yang Kami Lakukan</h2>
-        <p class="leading-relaxed mb-4 text-sm">
-          Kami menyediakan layanan dan peralatan pendukung untuk sektor minyak & gas/panas
-          bumi. Kami mendukung pelanggan dengan penyewaan peralatan maupun perbaikan
-          lapangan.
+    <!-- SECTION: PRODUK -->
+    <section
+      class="relative py-20 bg-fixed bg-center bg-cover"
+      style="background-image: url('../slasing/images/produk-bg.jpg')"
+    >
+      <div class="absolute inset-0 bg-black/40"></div>
+      <div class="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-4">Produk</h2>
+        <p>
+          Spesialis dalam fabrikasi, penyewaan, dan pemeliharaan peralatan pompa
+          tekanan untuk memenuhi kebutuhan operasional Anda.
         </p>
-        <p class="leading-relaxed mb-4 text-sm">
-          Layanan kami meliputi penyewaan unit pompa HP, pompa sentrifugal, batch mixer,
-          tangki air, tangki pencampur, nitrogen unit, trailer kompresor, dan banyak lagi.
-        </p>
-        <p class="font-semibold text-sm">Manajemen kami mematuhi ISO 9001-2015</p>
       </div>
-      <img src="certificate.jpg" class="w-full max-w-sm mx-auto rounded shadow-lg" />
-    </div>
-  </section>
+    </section>
 
-  <!-- FOOTER -->
-  <footer class="bg-gray-900 text-white py-12 mt-10 text-sm">
-    <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8 px-4">
-      <div>
-        <img src="logo.png" class="h-12 mb-4" />
-        <p>PT Tamfindo Mitra Mandiri</p>
-      </div>
-      <div>
-        <h4 class="font-bold mb-2">Kantor Dukungan</h4>
-        <p>Jl. Pangkalan Jakarta Pusat, Blok C No.29</p>
-        <p>Indonesia 10730</p>
-      </div>
-      <div>
-        <h4 class="font-bold mb-2">Hubungi Kami</h4>
-        <p>Email: sales@tamfindo.com</p>
-        <p>Tel: 021-62307010</p>
-      </div>
-    </div>
-  </footer>
+    <!-- SECTION: INFO CARDS -->
+    <section class="py-14 bg-white">
+      <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8 px-4">
+        <!-- CARD 1 -->
+        <div class="p-6 border shadow-sm bg-gray-50 rounded">
+          <img
+            src="../slasing/images/Banner_fabr_2.jpg"
+            class="w-full h-48 object-cover rounded mb-4"
+          />
+          <p>
+            Tamfindo telah berpengalaman dalam perbaikan/perbaikan selama lebih
+            dari 10 tahun. Kami memiliki tenaga fabrikasi yang berkualifikasi
+            untuk memberikan hasil pengelasan berkualitas sesuai standar
+            industri.
+          </p>
+          <a href="#" class="block mt-4 text-orange-600 font-semibold">
+            BACA SELENGKAPNYA →
+          </a>
+        </div>
 
-  
-</body>
+        <!-- CARD 2 -->
+        <div class="p-6 border shadow-sm bg-gray-50 rounded">
+          <img
+            src="../slasing/images/Banner_1_Engine_1.jpg"
+            class="w-full h-48 object-cover rounded mb-4"
+          />
+          <p>
+            Sebagai distributor Suku Cadang Detroit Diesel, Mesin Caterpillar,
+            dan produsen terkait kami, suku cadang ujung cairan pompa, dan
+            lainnya.
+          </p>
+          <a href="#" class="block mt-4 text-orange-600 font-semibold">
+            BACA SELENGKAPNYA →
+          </a>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="p-6 border shadow-sm bg-gray-50 rounded">
+          <img
+            src="../slasing/images/Banner_1_1.jpg"
+            class="w-full h-48 object-cover rounded mb-4"
+          />
+          <p>
+            Kami adalah tim profesional dengan pengalaman lebih dari 10 tahun
+            dalam layanan pemasangan selang hidrolik.
+          </p>
+          <a href="#" class="block mt-4 text-orange-600 font-semibold">
+            BACA SELENGKAPNYA →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: LAYANAN -->
+    <section class="py-20 bg-gray-50">
+      <h2 class="text-center text-3xl font-bold mb-12">Layanan</h2>
+
+      <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-8 px-4">
+        <!-- ITEM 1 -->
+        <div class="bg-white shadow p-4 flex flex-col">
+          <img
+            src="../slasing/images/1_Cement_Bulker.webp"
+            class="w-full rounded"
+          />
+          <h3 class="font-bold mt-4">Trailer Pengangkut Semen</h3>
+          <p class="text-sm mt-2 flex-grow">
+            Trailer pengangkut semen Tamfindo merupakan bejana tekan tipe pisang
+            untuk mengangkut dan membongkar semen curah serta material curah
+            berbentuk bubuk lainnya.
+          </p>
+
+          <a
+            href="#"
+            class="inline-block mt-4 px-6 py-2 bg-gray-600 text-white text-sm font-semibold rounded-full hover:bg-gray-700 transition w-fit"
+          >
+            Hubungi
+          </a>
+        </div>
+
+        <!-- ITEM 2 -->
+        <div class="bg-white shadow p-4 flex flex-col">
+          <img
+            src="../slasing/images/2_Batch_Mixer.webp"
+            class="w-full rounded"
+          />
+          <h3 class="font-bold mt-4">Pengaduk Batch</h3>
+          <p class="text-sm mt-2 flex-grow">
+            Mixer batch vertikal 100 barel yang dipasang di skid Tamfindo
+            didesain untuk dapat mendukung dirinya sendiri dan memungkinkan
+            fleksibilitas dalam menjalankan dua batch bubur (masing-masing 50
+            BBL).
+          </p>
+
+          <a
+            href="#"
+            class="inline-block mt-4 px-6 py-2 bg-gray-600 text-white text-sm font-semibold rounded-full hover:bg-gray-700 transition w-fit"
+          >
+            Hubungi
+          </a>
+        </div>
+
+        <!-- ITEM 3 -->
+        <div class="bg-white shadow p-4 flex flex-col">
+          <img
+            src="../slasing/images/3_Batch_Mixer_Zone_2.webp"
+            class="w-full rounded"
+          />
+          <h3 class="font-bold mt-4">Mixer Batch Zona-2</h3>
+          <p class="text-sm mt-2 flex-grow">
+            Mixer batch vertikal 100 barel Tamfindo yang dipasang di skid
+            (Zona-2) dirancang agar dapat mendukung dirinya sendiri dan
+            memungkinkan fleksibilitas dalam menjalankan dua batch bubur
+            (masing-masing 50 BBL).
+          </p>
+
+          <a
+            href="#"
+            class="inline-block mt-4 px-6 py-2 bg-gray-600 text-white text-sm font-semibold rounded-full hover:bg-gray-700 transition w-fit"
+          >
+            Hubungi
+          </a>
+        </div>
+
+        <!-- ITEM 4 -->
+        <div class="bg-white shadow p-4 flex flex-col">
+          <img
+            src="../slasing/images/4_Single_Pump_Skid.webp"
+            class="w-full rounded"
+          />
+          <h3 class="font-bold mt-4">Skid Pompa Tunggal</h3>
+          <p class="text-sm mt-2 flex-grow">
+            Pompa Tunggal Tamfindo dirancang untuk pemindahan air, kerikil,
+            asam, dan cairan pengolahan sumur lainnya secara efisien.
+          </p>
+
+          <a
+            href="#"
+            class="inline-block mt-4 px-6 py-2 bg-gray-600 text-white text-sm font-semibold rounded-full hover:bg-gray-700 transition w-fit"
+          >
+            Hubungi
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-white py-10 text-sm">
+      <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-10 px-4">
+        <div>
+          <img src="../slasing/images/logo2_png (1).webp" class="h-12 mb-4" />
+          <p>PT Tamfindo Mitra Mandiri</p>
+        </div>
+        <div>
+          <p class="font-bold mb-2">Kantor Dukungan:</p>
+          <p>Jl. Pangkalan Jakarta ...</p>
+        </div>
+        <div>
+          <p class="font-bold mb-2">Hubungi Kami:</p>
+          <p>Email: sales@tamfindo.com</p>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>

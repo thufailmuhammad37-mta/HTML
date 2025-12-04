@@ -1,114 +1,146 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <title>Tentang Kami - Tamfindo</title>
-</head>
-<body class="font-sans text-gray-800">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Tentang Kami - Tamfindo</title>
+  </head>
+  <body class="font-sans text-gray-800">
+    <!-- Navbar -->
+    <header class="bg-white shadow fixed w-full top-0 z-50">
+      <div
+        class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4"
+      >
+        <!-- LOGO -->
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="logo.png" class="h-12" alt="logo" />
+          <span class="font-bold text-xl">INFOTAMFINDO</span>
+        </a>
 
-  <!-- Navbar -->
-  <nav class="w-full bg-white shadow fixed top-0 left-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-      <img src="logo.png" alt="Tamfindo" class="h-10" />
-      <ul class="hidden md:flex gap-6 text-sm font-medium">
-        <li><a href="#" class="hover:text-red-600 transition">Beranda</a></li>
-        <li><a href="#" class="hover:text-red-600 border-b-2 border-red-600 pb-1">Tentang Kami</a></li>
-        <li><a href="#" class="hover:text-red-600 transition">Layanan</a></li>
-        <li><a href="#" class="hover:text-red-600 transition">Kontak</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- Hero Section -->
-  <section class="w-full h-[80vh] mt-16 relative">
-    <img src="hero.jpg" class="w-full h-full object-cover" />
-    <div class="absolute inset-0 bg-black/50"></div>
-    <div class="absolute inset-0 flex flex-col justify-center px-10 md:px-28 text-white">
-      <h1 class="text-5xl font-bold mb-6">Tentang Kami</h1>
-      <p class="max-w-2xl text-lg leading-relaxed">
-        Dengan pengalaman bertahun-tahun, kami menyediakan peralatan dan layanan berkualitas tinggi untuk kebutuhan perompaan tekanan Anda.
-      </p>
-    </div>
-  </section>
-
-  <!-- PT Tamfindo Mitra Mandiri -->
-  <section class="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12">
-    <div>
-      <h2 class="text-3xl font-bold mb-6">PT Tamfindo Mitra Mandiri</h2>
-      <p class="leading-relaxed text-sm text-gray-700 mb-4">
-        Didirikan di Jakarta, Indonesia pada tahun 2014, Tamfindo memiliki pengalaman bertahun-tahun dalam mendukung peralatan/layanan Pompa Tekanan sebagai bagian dari sektor Minyak & Gas dan panas bumi.
-      </p>
-      <p class="leading-relaxed text-sm text-gray-700 mb-4">
-        Kompetensi inti kami meliputi tidak terbatas pada fabrikasi/manufaktur, penyewaan, perbaikan, dan pemeliharaan peralatan pompa bertekanan.
-      </p>
-      <p class="leading-relaxed text-sm text-gray-700">
-        Kami juga menyediakan solusi lengkap dalam servis dan perbaikan unit pompa (unit sementasi, pompa acidizing, pompa triplex, pompa nitrogen, dan unit pipa koil).
-      </p>
-    </div>
-    <div>
-      <img src="pttamfindo.jpg" class="w-full rounded-lg shadow-lg" />
-    </div>
-  </section>
-
-  <!-- Misi Section -->
-  <section class="relative py-28">
-    <img src="misi.jpg" class="absolute inset-0 w-full h-full object-cover" />
-    <div class="absolute inset-0 bg-black/60"></div>
-    <div class="relative max-w-5xl mx-auto px-6 text-white">
-      <h2 class="text-4xl font-bold mb-6">MISI</h2>
-      <p class="text-sm leading-relaxed mb-3">
-        Tujuan utama kami adalah menjadi lebih besar, lebih baik, dan lebih kuat dengan terus menyediakan layanan terbaik kepada pelanggan berharga kami.
-      </p>
-      <p class="text-sm leading-relaxed mb-3">
-        Kami berusaha untuk menyediakan layanan yang paling andal dan efisien tanpa mengorbankan keselamatan dan kualitas.
-      </p>
-      <p class="text-sm leading-relaxed">
-        Kami ingin membuktikan keterampilan kualitas kami, perbaikan berkelanjutan, dan kepedulian terhadap pelanggan sebagai bagian dari hubungan bisnis jangka panjang.
-      </p>
-    </div>
-  </section>
-
-  <!-- Apa yang Kami Lakukan -->
-  <section class="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center">
-    <div>
-      <h2 class="text-4xl font-bold mb-6">Apa yang Kami Lakukan</h2>
-      <p class="text-sm leading-relaxed mb-4">
-        Kami menyediakan layanan dan peralatan pendukung untuk sektor minyak & gas/panas bumi.
-      </p>
-      <p class="text-sm leading-relaxed mb-4">
-        Portfolio solusi kami mendukung pelanggan baik dengan menyediakan penyewaan maupun layanan perbaikan lapangan — termasuk perbaikan pompa HP, pompa sentrifugal, tangki air, tangki pencampur, mixer slurry, trailer kompresor udara, dan banyak lagi.
-      </p>
-      <p class="font-semibold text-sm">Manajemen kami mematuhi ISO 9001-2015</p>
-    </div>
-    <div>
-      <img src="certificate.jpg" class="w-full max-w-md mx-auto shadow-lg rounded" />
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-gray-900 text-white py-14">
-    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-10 text-sm">
-      <div>
-        <img src="logo.png" class="h-12 mb-4" />
-        <p>PT Tamfindo Mitra Mandiri</p>
+        <!-- MENU -->
+        <nav class="space-x-6 font-medium text-gray-700 hidden md:block">
+          <a href="index.html" class="hover:text-orange-600">Beranda</a>
+          <a href="tentang.html" class="hover:text-orange-600">Tentang</a>
+          <a href="layanan.html" class="text-orange-600 font-semibold"
+            >Layanan</a
+          >
+          <a href="kontak.html" class="hover:text-orange-600">Kontak</a>
+        </nav>
       </div>
+    </header>
 
-      <div>
-        <h3 class="font-bold mb-3">Fasilitas Karawang (Pangkalan Utama)</h3>
-        <p>Kawasan Artha Industrial Hill (AIH)</p>
-        <p>Kav. E No.12 Karawang Barat</p>
-        <p>Indonesia 41361</p>
+    <!-- Hero Section -->
+    <section class="w-full h-[80vh] mt-16 relative">
+      <img src="hero.jpg" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-black/50"></div>
+      <div
+        class="absolute inset-0 flex flex-col justify-center px-10 md:px-28 text-white"
+      >
+        <h1 class="text-5xl font-bold mb-6">Tentang Kami</h1>
+        <p class="max-w-2xl text-lg leading-relaxed">
+          Dengan pengalaman bertahun-tahun, kami menyediakan peralatan dan
+          layanan berkualitas tinggi untuk kebutuhan perompaan tekanan Anda.
+        </p>
       </div>
+    </section>
 
+    <!-- PT Tamfindo Mitra Mandiri -->
+    <section class="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12">
       <div>
-        <h3 class="font-bold mb-3">Hubungi Kami</h3>
-        <p>Email: sales@tamfindo.com</p>
-        <p>Tel: 021-62307010</p>
+        <h2 class="text-3xl font-bold mb-6">PT Tamfindo Mitra Mandiri</h2>
+        <p class="leading-relaxed text-sm text-gray-700 mb-4">
+          Didirikan di Jakarta-Indonesia pada tahun 2014, Tamfindo memiliki
+          pengalaman bertahun-tahun dalam mendukung peralatan/layanan Pompa
+          Tekanan dan sebagai bagian dari sektor Minyak & Gas dan panas bumi.
+        </p>
+        <p class="leading-relaxed text-sm text-gray-700">
+          Kompetensi inti kami meliputi, namun tidak terbatas pada,
+          fabrikasi/manufaktur, penyewaan, perbaikan, dan pemeliharaan peralatan
+          pompa bertekanan. Kami juga menyediakan solusi lengkap dalam servis
+          dan perbaikan mesin unit pompa (unit sementasi, pompa sentrifugal,
+          mixer batch, pompa tripleks, pompa nitrogen, dan unit pipa koil).
+        </p>
       </div>
-    </div>
-  </footer>
+      <div>
+        <img
+          src="../slasing/images/vlcsnap-2024-09-17-14h24m38s189.jpg"
+          class="w-full rounded-lg shadow-lg"
+        />
+      </div>
+    </section>
 
-</body>
+    <!-- Misi Section -->
+    <section class="relative py-28">
+      <img src="misi.jpg" class="absolute inset-0 w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-black/60"></div>
+      <div class="relative max-w-5xl mx-auto px-6 text-white">
+        <h2 class="text-4xl font-bold mb-6">MISI</h2>
+        <p class="text-sm leading-relaxed mb-3">
+          Tujuan utama kami adalah menjadi lebih besar, lebih baik, dan lebih
+          kuat dengan terus menyediakan layanan terbaik kepada pelanggan
+          berharga kami.
+        </p>
+        <p class="text-sm leading-relaxed mb-3">
+          Kami berusaha untuk menyediakan layanan yang paling andal dan efisien
+          tanpa mengorbankan keselamatan dan kualitas.
+        </p>
+        <p class="text-sm leading-relaxed">
+          Kami ingin membuktikan keterampilan kualitas kami, perbaikan
+          berkelanjutan, dan kepedulian terhadap pelanggan sebagai bagian dari
+          hubungan bisnis jangka panjang.
+        </p>
+      </div>
+    </section>
+
+    <!-- Apa yang Kami Lakukan -->
+    <section
+      class="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center"
+    >
+      <div>
+        <h2 class="text-4xl font-bold mb-6">Apa yang Kami Lakukan</h2>
+        <p class="text-sm leading-relaxed mb-4">
+          Kami menyediakan layanan dan peralatan pendukung untuk sektor minyak &
+          gas/panas bumi. Portofolio solusi kami mendukung pelanggan kami dengan
+          menyediakan penyewaan dan layanan peralatan lapangan yang meliputi,
+          tetapi tidak terbatas pada, unit pompa HP, pompa sentrifugal, tangki
+          air, tangki pencampur, mixer batch, bulker semen, silo semen, besi
+          pengolah, trailer, kompresor udara, dll
+        </p>
+        <p class="font-semibold text-sm">
+          Kami berusaha keras untuk menyediakan solusi yang berkualitas dan
+          efektif. Manajemen kami mematuhi ISO 9001-2015
+        </p>
+      </div>
+      <div>
+        <img
+          src="../slasing/images/Tamfindo-ISO_9001_Certificate_2024-2025.jpg"
+          class="w-full max-w-md mx-auto shadow-lg rounded"
+        />
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-14">
+      <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-10 text-sm">
+        <div>
+          <img src="logo.png" class="h-12 mb-4" />
+          <p>PT Tamfindo Mitra Mandiri</p>
+        </div>
+
+        <div>
+          <h3 class="font-bold mb-3">Fasilitas Karawang (Pangkalan Utama)</h3>
+          <p>Kawasan Artha Industrial Hill (AIH)</p>
+          <p>Kav. E No.12 Karawang Barat</p>
+          <p>Indonesia 41361</p>
+        </div>
+
+        <div>
+          <h3 class="font-bold mb-3">Hubungi Kami</h3>
+          <p>Email: sales@tamfindo.com</p>
+          <p>Tel: 021-62307010</p>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
