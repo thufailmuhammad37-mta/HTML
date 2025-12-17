@@ -4,8 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kontak Kami - INFOTAMFINDO</title>
-
-    <!-- TAILWIND CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
       body {
@@ -15,128 +13,102 @@
   </head>
 
   <body class="bg-gray-100 text-gray-800">
-
- <header class="bg-white shadow fixed w-full top-0 z-50">
-    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-
-      <!-- LOGO -->
-      <a href="index.html" class="flex items-center gap-3">
-        <img src="logo.png" class="h-12" alt="logo" />
-        <span class="font-bold text-xl">INFOTAMFINDO</span>
-      </a>
-
-      <!-- MENU -->
-      <nav class="space-x-6 font-medium text-gray-700 hidden md:block">
-        <a href="index.html" class="hover:text-orange-600">Beranda</a>
-        <a href="tentang.html" class="hover:text-orange-600">Tentang</a>
-        <a href="layanan.html" class="text-orange-600 font-semibold">Layanan</a>
-        <a href="kontak.html" class="hover:text-orange-600">Kontak</a>
-      </nav>
-    </div>
-  </header>
-    
-    <!-- HERO SECTION -->
-    <section
-      class="relative py-24 bg-fixed bg-cover bg-center"
-      style="background-image: url('https://www.infotamfindo.com/wp-content/uploads/2024/08/BACKGROUND-HEADER-03-scaled.jpg')"
-    >
-      <div class="absolute inset-0 bg-black/50"></div>
-
-      <div class="relative z-10 text-center text-white px-6 max-w-3xl mx-auto">
-        <h1 class="text-4xl font-bold mb-4 uppercase tracking-wide">
-          KONTAK KAMI
-        </h1>
-        <p class="text-lg">
-          Hubungi kami untuk pertanyaan, layanan teknis, atau kebutuhan produk
-          Anda.
-        </p>
-      </div>
-    </section>
-
-    <!-- INFORMASI KONTAK -->
-    <section class="py-14">
-      <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 px-6">
-        <!-- CARD 1 -->
+    <header class="bg-white shadow fixed w-full top-0 z-50">
+      <nav class="w-full bg-white shadow-md">
+        <input type="checkbox" id="menu-toggle" class="hidden peer" />
         <div
-          class="bg-white border shadow-md p-8 rounded-md hover:shadow-lg transition"
+          class="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center"
         >
-          <h3 class="text-xl font-bold text-gray-900 mb-2">Alamat Kantor</h3>
-          <p class="text-gray-700">
-            Pergudangan Taman Tekno Blok E3 No 39, BSD City – Tangerang Selatan
-          </p>
-        </div>
-
-        <!-- CARD 2 -->
-        <div
-          class="bg-white border shadow-md p-8 rounded-md hover:shadow-lg transition"
-        >
-          <h3 class="text-xl font-bold text-gray-900 mb-2">Telepon</h3>
-          <p class="text-gray-700">+62 21 7587 4407</p>
-          <p class="text-gray-700">+62 813 9896 6999 (WhatsApp)</p>
-        </div>
-
-        <!-- CARD 3 -->
-        <div
-          class="bg-white border shadow-md p-8 rounded-md hover:shadow-lg transition"
-        >
-          <h3 class="text-xl font-bold text-gray-900 mb-2">Email</h3>
-          <p class="text-gray-700">sales@infotamfindo.com</p>
-          <p class="text-gray-700">info@infotamfindo.com</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- FORM KONTAK -->
-    <section class="py-14 bg-white">
-      <div class="max-w-4xl mx-auto px-6">
-        <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">
-          Kirim Pesan
-        </h2>
-
-        <form
-          class="bg-gray-50 p-8 rounded-lg shadow-md grid md:grid-cols-2 gap-6"
-        >
-          <div>
-            <label class="block font-medium mb-2">Nama</label>
-            <input
-              type="text"
-              class="w-full border px-4 py-2 rounded-md focus:outline-none focus:ring focus:ring-orange-400"
-              placeholder="Nama Anda"
-            />
+          <div class="flex items-center space-x-2">
+            <img src="./images/logo2_png (1).webp" alt="logo" class="h-10" />
           </div>
 
-          <div>
-            <label class="block font-medium mb-2">Email</label>
-            <input
-              type="email"
-              class="w-full border px-4 py-2 rounded-md focus:outline-none focus:ring focus:ring-orange-400"
-              placeholder="email@example.com"
-            />
-          </div>
+          <ul class="hidden md:flex space-x-8 font-semibold">
+            <li>
+              <a href="index.html" class="hover:text-orange-500 transition">
+                Rumah
+              </a>
+            </li>
+            <li>
+              <a href="tentang.html" class="hover:text-orange-500 transition">
+                Tentang kami
+              </a>
+            </li>
+            <li class="flex items-center">
+              <a
+                href="layanan.html"
+                class="hover:text-orange-500 transition flex items-center"
+              >
+                Layanan
+                <svg
+                  class="w-4 h-4 ml-1"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="kontak.html" class="hover:text-orange-500 transition">
+                Kontak
+              </a>
+            </li>
+          </ul>
 
-          <div class="md:col-span-2">
-            <label class="block font-medium mb-2">Pesan</label>
-            <textarea
-              rows="5"
-              class="w-full border px-4 py-2 rounded-md focus:outline-none focus:ring focus:ring-orange-400"
-              placeholder="Tulis pesan Anda di sini…"
-            ></textarea>
-          </div>
-
-          <div class="md:col-span-2 text-center">
-            <button
-              type="submit"
-              class="bg-orange-600 text-white px-6 py-3 rounded-md font-semibold hover:bg-orange-700 transition"
+          <label for="menu-toggle" class="md:hidden cursor-pointer">
+            <svg
+              class="w-8 h-8"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
             >
-              KIRIM PESAN
-            </button>
-          </div>
-        </form>
-      </div>
-    </section>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </label>
+        </div>
 
-    <!-- MAP -->
-    <section class="py-10">
+        <div
+          class="md:hidden max-h-0 overflow-hidden peer-checked:max-h-96 transition-all duration-300 ease-in-out bg-white shadow-md"
+        >
+          <ul class="flex flex-col space-y-4 px-6 py-6 font-semibold">
+            <li>
+              <a href="index.html" class="hover:text-orange-500 transition">
+                Rumah
+              </a>
+            </li>
+            <li>
+              <a href="tentang.html" class="hover:text-orange-500 transition">
+                Tentang kami
+              </a>
+            </li>
+            <li>
+              <a href="layanan.html" class="hover:text-orange-500 transition">
+                Layanan
+              </a>
+            </li>
+            <li>
+              <a href="kontak.html" class="hover:text-orange-500 transition">
+                Kontak
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <section class="py-10 mt-20">
       <div class="max-w-6xl mx-auto px-6">
         <iframe
           class="w-full h-80 border rounded-md shadow-md"
@@ -146,5 +118,205 @@
         ></iframe>
       </div>
     </section>
+
+    <section class="py-14 bg-white">
+      <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10">
+        <div>
+          <h2 class="text-3xl font-bold mb-8 text-gray-800">Kirim Pesan</h2>
+
+          <form class="bg-gray-50 p-8 rounded-lg shadow-md space-y-6">
+            <div>
+              <label class="block font-medium mb-2"
+                >Nama <span class="text-red-500">*</span></label
+              >
+              <input
+                type="text"
+                class="w-full border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400"
+              />
+            </div>
+
+            <div>
+              <label class="block font-medium mb-2"
+                >E-mail <span class="text-red-500">*</span></label
+              >
+              <input
+                type="email"
+                class="w-full border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400"
+              />
+            </div>
+
+            <div>
+              <label class="block font-medium mb-2"
+                >Telepon <span class="text-red-500">*</span></label
+              >
+              <input
+                type="text"
+                class="w-full border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400"
+              />
+            </div>
+
+            <div>
+              <label class="block font-medium mb-2"
+                >Perusahaan <span class="text-red-500">*</span></label
+              >
+              <input
+                type="text"
+                class="w-full border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400"
+              />
+            </div>
+
+            <div>
+              <label class="block font-medium mb-2"
+                >Jenis Kontak <span class="text-red-500">*</span></label
+              >
+              <select
+                class="w-full border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400"
+              >
+                <option>Silakan Pilih</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block font-medium mb-2"
+                >Pesan <span class="text-red-500">*</span></label
+              >
+              <textarea
+                rows="5"
+                class="w-full border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400"
+              ></textarea>
+            </div>
+
+            <div>
+              <label class="block font-medium mb-2">7 + 2 =</label>
+              <div class="flex items-center space-x-3">
+                <input type="text" class="border rounded-md p-2 w-32" />
+                <button type="button" class="border px-3 py-2 rounded-md">
+                  ⟳
+                </button>
+              </div>
+              <p class="text-gray-500 text-sm mt-1">
+                Silakan masukkan hasil Anda.
+              </p>
+            </div>
+
+            <div class="text-center">
+              <button
+                type="submit"
+                class="bg-orange-600 text-white px-6 py-3 rounded-md font-semibold hover:bg-orange-700 transition"
+              >
+                KIRIM PESAN
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div class="space-y-8">
+          <h2 class="text-4xl font-bold text-gray-800">Kontak</h2>
+
+          <div>
+            <p class="font-semibold text-lg mb-1">📍Alamat</p>
+            <p class="text-gray-700 leading-relaxed">
+              Fasilitas Karawang (Pangkalan Utama): Kawasan Artha Industrial
+              Hill (AIH) Kav. E No.12 Karawang Barat,<br />
+              Karawang, Jawa Barat Indonesia 41361
+            </p>
+          </div>
+
+          <div>
+            <p class="font-semibold text-lg mb-1">📞Telepon</p>
+            <p class="text-gray-700">021-62307010</p>
+          </div>
+
+          <div>
+            <p class="font-semibold text-lg mb-1">✉️E-mail</p>
+            <p class="text-gray-700">sales@tamfindo.com</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-white w-full border-t pt-10 pb-4">
+      <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-10">
+        <div>
+          <img
+            src="../slasing/images/logo2_png.webp"
+            class="w-48"
+            alt="Tamfindo Logo"
+          />
+        </div>
+        <div>
+          <h3 class="font-bold text-xl text-gray-900">
+            PT Tamfindo Mitra Mandiri
+          </h3>
+
+          <p class="text-orange-600 font-semibold mt-2">
+            Fasilitas Karawang (Pangkalan Utama):
+          </p>
+
+          <p class="text-gray-600 mt-1 leading-relaxed">
+            Kawasan Artha Industrial Hill (AIH)<br />
+            Kav. E No.12 Karawang Barat,<br />
+            Karawang, Jawa Barat<br />
+            Indonesia 41361
+          </p>
+        </div>
+        <div>
+          <p class="text-orange-600 font-semibold text-lg">Kantor Dukungan:</p>
+          <p class="text-gray-600 mt-2 leading-relaxed">
+            Jl. Pangeran Jayakarta, Komp. 129<br />
+            Blok C No.29 Jakarta Pusat<br />
+            DKI Jakarta, Indonesia 10730
+          </p>
+        </div>
+
+        <div>
+          <p class="text-orange-600 font-semibold text-lg">Hubungi Kami:</p>
+
+          <div class="flex items-center mt-3 text-gray-700">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6 mr-2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15A2.25 2.25 0 002.25 6.75m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.5a2.25 2.25 0 01-2.31 0l-7.5-4.5A2.25 2.25 0 013 6.993V6.75"
+              />
+            </svg>
+            <span>sales@tamfindo.com</span>
+          </div>
+
+          <div class="flex items-center mt-3 text-gray-700">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6 mr-2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M2.25 6.75c0 8.284 15 2.25 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106a1.125 1.125 0 00-1.173.417l-.97 1.293a1.125 1.125 0 01-1.21.38A12.035 12.035 0 015.5 9.69a1.125 1.125 0 01.38-1.21l1.293-.97c.35-.263.505-.71.417-1.173L6.484 1.914A1.125 1.125 0 005.394 1.5H4.5A2.25 2.25 0 002.25 3.75v3z"
+              />
+            </svg>
+            <span>Telepon: 021-62307010</span>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="bg-[#3f3f3f] text-white text-center text-sm py-8 mt-10 leading-relaxed"
+      >
+        Hak Cipta 2024 | Seluruh Hak Dilindungi Undang-Undang | Tamfindo
+        <br />
+        <span class="text-xs">Jasa Pembuatan Website Oleh MakeWebEasy</span>
+      </div>
+    </footer>
   </body>
 </html>
